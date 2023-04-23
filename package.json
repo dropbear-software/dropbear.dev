@@ -1,0 +1,121 @@
+{
+  "name": "@dropbear/website",
+  "version": "0.0.1",
+  "description": "Dropbear.dev website",
+  "main": "lib/app_shell.js",
+  "type": "module",
+  "private": true,
+  "exports": {
+    ".": {
+      "development": "./lib/app.js",
+      "default": "./dist/app.js"
+    }
+  },
+  "scripts": {
+    "dev": "wireit",
+    "build": "wireit",
+    "preview": "wireit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dropbear-software/dropbear.dev.git"
+  },
+  "author": "Mark Hoad",
+  "bugs": {
+    "url": "https://github.com/dropbear-software/dropbear.dev/issues"
+  },
+  "homepage": "https://github.com/dropbear-software/dropbear.dev#readme",
+  "devDependencies": {
+    "@web/dev-server": "^0.2.0",
+    "esbuild": "^0.17.18",
+    "jspm": "^3.0.0",
+    "typescript": "^5.0.4",
+    "urlpattern-polyfill": "^7.0.0",
+    "wireit": "^0.9.5"
+  },
+  "wireit": {
+    "dev": {
+      "command": "web-dev-server",
+      "service": true,
+      "dependencies": [
+        "jspm:link:dev"
+      ]
+    },
+    "jspm:link:dev": {
+      "command": "jspm link @dropbear/website -o index.html --env=development",
+      "dependencies": [
+        "jspm:install:dev"
+      ]
+    },
+    "jspm:link:prod": {
+      "command": "jspm link index.html -o index.html --env=production --preload --integrity",
+      "dependencies": [
+        "jspm:install:prod"
+      ]
+    },
+    "jspm:install:dev": {
+      "command": "jspm install lit @lit-labs/context @lit-labs/task @lit-labs/router @dropbear/website=./lib/app_shell.js --env=development",
+      "files": [
+        "lib/app_shell.js"
+      ],
+      "output": [
+        "importmap.json"
+      ],
+      "dependencies": [
+        "build:ts"
+      ]
+    },
+    "jspm:install:prod": {
+      "command": "jspm install lit @lit-labs/context @lit-labs/task @lit-labs/router @dropbear/website=./lib/app_shell.js --env=production",
+      "files": [
+        "lib/app_shell.js"
+      ],
+      "output": [
+        "importmap.json"
+      ],
+      "dependencies": [
+        "build:ts"
+      ]
+    },
+    "build:ts": {
+      "command": "tsc --build --pretty",
+      "clean": "if-file-deleted",
+      "files": [
+        "src/**/*.ts",
+        "tsconfig.json"
+      ],
+      "output": [
+        "lib/**",
+        "tsconfig.tsbuildinfo"
+      ]
+    },
+    "build": {
+      "command": "cp -r lib/ dist/ && cp index.html dist/index.html && cp -r assets/ dist/",
+      "files": [
+        "lib/**",
+        "assets/**",
+        "index.html"
+      ],
+      "output": [
+        "dist/**"
+      ],
+      "dependencies": [
+        "jspm:link:prod"
+      ]
+    },
+    "preview": {
+      "command": "web-dev-server",
+      "service": true,
+      "dependencies": [
+        "build"
+      ]
+    }
+  },
+  "dependencies": {
+    "@lit-labs/context": "^0.3.0",
+    "@lit-labs/router": "^0.1.1",
+    "@lit-labs/task": "^2.1.0",
+    "@material/web": "^1.0.0-pre.6",
+    "lit": "^2.7.2"
+  }
+}

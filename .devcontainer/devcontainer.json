@@ -15,7 +15,8 @@
 				"runem.lit-plugin",
 				"esbenp.prettier-vscode",
 				"dbaeumer.vscode-eslint",
-				"JSPM.jspm-vscode"
+				"JSPM.jspm-vscode",
+				"google.wireit"
 			]
 		}
 	}
