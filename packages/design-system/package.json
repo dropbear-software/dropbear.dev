@@ -1,0 +1,22 @@
+{
+  "name": "@dropbear/design-system",
+  "version": "0.0.1",
+  "description": "Material based design system for dropbear.dev",
+  "main": "index.js",
+  "type": "module",
+  "private": true,
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dropbear-software/dropbear.dev.git",
+    "directory": "packages/design-system"
+  },
+  "author": "Mark Hoad",
+  "bugs": {
+    "url": "https://github.com/dropbear-software/dropbear.dev/issues"
+  },
+  "homepage": "https://github.com/dropbear-software/dropbear.dev#readme"
+}

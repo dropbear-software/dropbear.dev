@@ -108,5 +108,8 @@
     "@material/web": "^1.0.0-pre.6",
     "lit": "^2.7.2",
     "urlpattern-polyfill": "^8.0.1"
-  }
+  },
+  "workspaces": [
+    "packages/design-system"
+  ]
 }
