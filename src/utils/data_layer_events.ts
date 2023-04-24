@@ -1,7 +1,8 @@
 export const dataLayerEvents = {
-  remoteConfig: {
-    installationFailed: 'remote-config-installation-failed',
-    installationSuccess: 'remote-config-installation-success'
+  configurationService: {
+    remoteConfigInstalled: 'remote-config-installation-success',
+    remoteConfigFailed: 'remote-config-installation-failed',
+    remoteConfigDisabled: 'remote-config-disabled'
   },
   pollyfillInstalled: 'pollyfill-installed'
 }

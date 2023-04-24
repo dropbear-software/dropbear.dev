@@ -1,12 +1,9 @@
 import { LitElement, html } from "lit";
 import { customElement } from "lit/decorators.js";
 import { Router } from "@lit-labs/router";
-import { Task } from "@lit-labs/task";
 import { routerConfiguration } from "./features/router/router-configuration.js";
-import { WebsiteConfiguration } from "./features/remote-config/website-configuration.js";
-import { defaultConfiguration } from "./features/remote-config/service-settings.js";
 import { PollyfillController } from "./features/pollyfills/pollyfill-controller.js";
-import { dataLayerEvents } from "./utils/data_layer_events.js";
+import { WebsiteConfigurationController } from "./features/remote-config/website-configuration-controller.js";
 
 @customElement('dropbear-website')
 export class DropbearWebsite extends LitElement {
@@ -16,57 +13,18 @@ export class DropbearWebsite extends LitElement {
   // @ts-ignore: No unused vars
   #polyfillController = new PollyfillController(this);
 
-  #getConfigTask = new Task(
-    this,
-    () => this.#fetchRemoteConfiguration(),
-    () => []
-  );
-
-  #config: WebsiteConfiguration = defaultConfiguration;
+  #configurationController = new WebsiteConfigurationController(this);
   
   protected override render() {
-    return html`
-      ${this.#getConfigTask.render(
-        {
-          initial: () => this.#renderInitialScreen(),
-          pending: () => this.#renderLoadingState(),
-          complete: () => this.#router.outlet(),
-          error: (error) => this.#handleError(error)
-        }
-      )}
-    `;
-  }
-
-  async #fetchRemoteConfiguration(){
-    const response = await fetch('./assets/data/fake_remote_config_settings.json');
-    const parsedConfig = await response.json();
-    this.#config = parsedConfig;
-    window.dataLayer?.push({
-      'event': dataLayerEvents.remoteConfig.installationSuccess,
-      'settings': this.#config
-    });
-  }
-
-  #renderInitialScreen(){
-    return html`<p>Initial</p>`;
+    if (this.#configurationController.ready) {
+      return this.#router.outlet();
+    } else {
+      return this.#renderLoadingState();
+    }
   }
 
   #renderLoadingState(){
     return html`<p>Loading</p>`;
-  }
-
-  #handleError(error: unknown){
-    let errorType = 'unknown';
-    if (typeof error === 'object' && error !== null && 'toString' in error){
-      errorType = error.toString();
-    }
-
-    window.dataLayer?.push({
-      'event': dataLayerEvents.remoteConfig.installationFailed,
-      'settings': this.#config,
-      'error_type': errorType
-    });
-    return this.#router.outlet();
   }
 }
 
