@@ -19,6 +19,7 @@ export class HomePage extends WebPage {
   }
 
   protected override render(): TemplateResult {
+    console.log(`Getting context: ${this.websiteConfiguration?.hidden_feature_enabled}`);
     return html`
       <a href="/about">About Page</a>
       <simple-greeting .name=${"Universe"}></simple-greeting>`
