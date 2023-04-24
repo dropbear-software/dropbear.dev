@@ -5,5 +5,6 @@ export const serviceSettings = {
 };
 
 export const defaultConfiguration: WebsiteConfiguration = {
-  hidden_feature_enabled: false
+  hidden_feature_enabled: false,
+  remote_config_enabled: false
 }

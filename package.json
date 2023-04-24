@@ -7,8 +7,8 @@
   "private": true,
   "exports": {
     ".": {
-      "development": "./lib/app.js",
-      "default": "./dist/app.js"
+      "development": "./lib/app_shell.js",
+      "default": "./dist/app_shell.js"
     }
   },
   "scripts": {
@@ -39,7 +39,6 @@
     "eslint-plugin-wc": "^1.5.0",
     "jspm": "^3.0.0",
     "typescript": "^5.0.4",
-    "urlpattern-polyfill": "^7.0.0",
     "wireit": "^0.9.5"
   },
   "wireit": {
@@ -107,6 +106,7 @@
     "@lit-labs/router": "^0.1.1",
     "@lit-labs/task": "^2.1.0",
     "@material/web": "^1.0.0-pre.6",
-    "lit": "^2.7.2"
+    "lit": "^2.7.2",
+    "urlpattern-polyfill": "^8.0.1"
   }
 }
