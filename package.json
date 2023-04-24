@@ -77,7 +77,8 @@
       "output": [
         "lib/**",
         "tsconfig.tsbuildinfo"
-      ]
+      ],
+      "dependencies": ["./packages/design-system:build"]
     },
     "build": {
       "command": "esbuild lib/app_shell.js --bundle --format=esm --splitting --minify --sourcemap --target=es2021 --outdir=dist",
@@ -102,6 +103,7 @@
     }
   },
   "dependencies": {
+    "@dropbear/design-system": "^0.0.1",
     "@lit-labs/context": "^0.3.0",
     "@lit-labs/router": "^0.1.1",
     "@lit-labs/task": "^2.1.0",
