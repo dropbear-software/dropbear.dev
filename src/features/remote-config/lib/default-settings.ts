@@ -4,7 +4,7 @@ import { WebsiteConfiguration, WebsiteConfigurationControllerSettings } from "./
 export const defaultServiceSettings: WebsiteConfigurationControllerSettings = {
   minimumFetchIntervalMillis: 3600000,
   fetchTimeoutMillis: 1500,
-  dataSource: new URL("../../../assets/data/fake_remote_config_settings.json", import.meta.url)
+  dataSource: new URL("../../../../assets/data/fake_remote_config_settings.json", import.meta.url)
 };
 
 export const defaultConfiguration: WebsiteConfiguration = {
