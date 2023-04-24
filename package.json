@@ -12,7 +12,9 @@
     }
   },
   "scripts": {
-    "dev": "wireit",
+    "start": "wireit",
+    "lint": "wireit",
+    "test": "wireit",
     "build": "wireit",
     "preview": "wireit"
   },
@@ -26,52 +28,41 @@
   },
   "homepage": "https://github.com/dropbear-software/dropbear.dev#readme",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.59.0",
+    "@typescript-eslint/parser": "^5.59.0",
     "@web/dev-server": "^0.2.0",
+    "@web/test-runner": "^0.16.1",
+    "@web/test-runner-playwright": "^0.10.0",
     "esbuild": "^0.17.18",
+    "eslint": "^8.39.0",
+    "eslint-plugin-lit": "^1.8.3",
+    "eslint-plugin-wc": "^1.5.0",
     "jspm": "^3.0.0",
     "typescript": "^5.0.4",
     "urlpattern-polyfill": "^7.0.0",
     "wireit": "^0.9.5"
   },
   "wireit": {
-    "dev": {
+    "start": {
       "command": "web-dev-server",
       "service": true,
-      "dependencies": [
-        "jspm:link:dev"
-      ]
-    },
-    "jspm:link:dev": {
-      "command": "jspm link @dropbear/website -o index.html --env=development",
-      "dependencies": [
-        "jspm:install:dev"
-      ]
-    },
-    "jspm:link:prod": {
-      "command": "jspm link index.html -o index.html --env=production --preload --integrity",
-      "dependencies": [
-        "jspm:install:prod"
-      ]
-    },
-    "jspm:install:dev": {
-      "command": "jspm install lit @lit-labs/context @lit-labs/task @lit-labs/router @dropbear/website=./lib/app_shell.js --env=development",
       "files": [
-        "lib/app_shell.js"
-      ],
-      "output": [
-        "importmap.json"
+        "web-dev-server.config.js"
       ],
       "dependencies": [
         "build:ts"
       ]
     },
-    "jspm:install:prod": {
-      "command": "jspm install lit @lit-labs/context @lit-labs/task @lit-labs/router @dropbear/website=./lib/app_shell.js --env=production",
+    "lint": {
+      "command": "eslint \"src/**/*.ts\"",
       "files": [
-        "lib/app_shell.js"
-      ],
-      "output": [
-        "importmap.json"
+        "src/**/*.ts"
+      ]
+    },
+    "test": {
+      "command": "web-test-runner",
+      "files": [
+        "web-test-runner.config.js"
       ],
       "dependencies": [
         "build:ts"
@@ -90,7 +81,7 @@
       ]
     },
     "build": {
-      "command": "cp -r lib/ dist/ && cp index.html dist/index.html && cp -r assets/ dist/",
+      "command": "esbuild lib/app_shell.js --bundle --format=esm --splitting --minify --sourcemap --target=es2021 --outdir=dist",
       "files": [
         "lib/**",
         "assets/**",
@@ -100,7 +91,7 @@
         "dist/**"
       ],
       "dependencies": [
-        "jspm:link:prod"
+        "build:ts"
       ]
     },
     "preview": {

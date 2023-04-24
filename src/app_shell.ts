@@ -1,8 +1,8 @@
 import { LitElement, html } from "lit";
 import { customElement } from "lit/decorators.js";
 import { Router } from "@lit-labs/router";
-import { routerConfiguration } from "./features/router/router-configuration.js";
 import { Task } from "@lit-labs/task";
+import { routerConfiguration } from "./features/router/router-configuration.js";
 import { WebsiteConfiguration } from "./features/remote-config/website-configuration.js";
 import { defaultConfiguration } from "./features/remote-config/service-settings.js";
 
