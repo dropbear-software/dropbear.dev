@@ -4,6 +4,7 @@ import { type WebsiteConfiguration, websiteConfigurationContext } from "../../fe
 import { PageController } from "./lib/page-controller.js";
 import { PageMetadata } from "./lib/types.js";
 import { property } from "lit/decorators.js";
+import { globalStyles } from "../../utils/global_styles.js";
 
 export class WebPage extends LitElement {
 
@@ -14,6 +15,8 @@ export class WebPage extends LitElement {
   @consume({context: websiteConfigurationContext})
   @property({attribute: false})
   public websiteConfiguration?: WebsiteConfiguration;
+
+  static styles = [...globalStyles];
   
   constructor(pageMetadata: PageMetadata) {
     super();

@@ -1,4 +1,4 @@
-import { LitElement, html } from "lit";
+import { LitElement, css, html } from "lit";
 import { customElement } from "lit/decorators.js";
 import { Router } from "@lit-labs/router";
 import { provide } from '@lit-labs/context';
@@ -6,6 +6,7 @@ import { websiteConfigurationContext } from "./features/remote-config/website-co
 import { routerConfiguration } from "./features/router/router-configuration.js";
 import { PollyfillController } from "./features/pollyfills/pollyfill-controller.js";
 import { WebsiteConfigurationController } from "./features/remote-config/website-configuration-controller.js";
+import { globalStyles } from "./utils/global_styles.js";
 
 @customElement('dropbear-website')
 export class DropbearWebsite extends LitElement {
@@ -19,6 +20,15 @@ export class DropbearWebsite extends LitElement {
 
   @provide({context: websiteConfigurationContext})
   context = this.#configurationController.settings;
+
+  static styles = [...globalStyles, css`
+    :host {
+      background-color: var(--md-sys-color-background);
+      color: var(--md-sys-color-on-background);
+      display: block;
+      overflow: auto;
+    }
+  `];
   
   protected override render() {
     if (this.#configurationController.ready) {

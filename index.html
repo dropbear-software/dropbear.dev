@@ -8,8 +8,16 @@
     <script>
       window.dataLayer = window.dataLayer || [];
     </script>
+    <style>
+      body { margin: 0; }
+      *, ::before, ::after { box-sizing: border-box; }
+      dropbear-website {
+        min-height: 100vh;
+        min-height: 100svh;
+      }
+    </style>
 </head>
-<body>
+<body class="background">
   <dropbear-website></dropbear-website>
   <script type="module" src="./lib/app_shell.js"></script>
 </body>

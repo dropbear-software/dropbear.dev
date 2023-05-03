@@ -55,7 +55,7 @@
       "dependencies": ["build:css-to-lit"]
     },
     "build:css": {
-      "command": "lightningcss --minify --bundle --sourcemap --targets '>= 0.25%' src/design-system.css -o dist/design-system.css",
+      "command": "lightningcss --minify --bundle --targets '>= 0.25%' src/design-system.css -o dist/design-system.css",
       "files": [
         "src/**/*.css"
       ],

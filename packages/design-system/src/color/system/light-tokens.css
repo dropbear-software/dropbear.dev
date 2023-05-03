@@ -1,0 +1,70 @@
+@layer design-system.material.system.color {
+  :root, :host {
+    /* Primary Colors */
+    --md-sys-color-primary-light: var(--md-ref-palette-primary40);
+    --md-sys-color-primary-container-light: var(--md-ref-palette-primary90);
+    --md-sys-color-on-primary-light: var(--md-ref-palette-primary100);
+    --md-sys-color-on-primary-container-light: var(--md-ref-palette-primary10);
+    --md-sys-color-inverse-primary-light: var(--md-ref-palette-primary80);
+
+    /* Secondary Colors */
+    --md-sys-color-secondary-light: var(--md-ref-palette-secondary40);
+    --md-sys-color-secondary-container-light: var(--md-ref-palette-secondary90);
+    --md-sys-color-on-secondary-light: var(--md-ref-palette-secondary100);
+    --md-sys-color-on-secondary-container-light: var(--md-ref-palette-secondary10);
+    
+    /* Tertiary Colors */
+    --md-sys-color-tertiary-light: var(--md-ref-palette-tertiary40);
+    --md-sys-color-tertiary-container-light: var(--md-ref-palette-tertiary90);
+    --md-sys-color-on-tertiary-light: var(--md-ref-palette-tertiary100);
+    --md-sys-color-on-tertiary-container-light: var(--md-ref-palette-tertiary10);
+
+    /* Purple-Pink Colors */
+    --md-sys-color-purple-pink-light: var(--md-ref-palette-purple-pink40);
+    --md-sys-color-purple-pink-container-light: var(--md-ref-palette-purple-pink90);
+    --md-sys-color-on-purple-pink-light: var(--md-ref-palette-purple-pink100);
+    --md-sys-color-on-purple-pink-container-light: var(--md-ref-palette-purple-pink10);
+
+    /* Yellow-Brown Colors */
+    --md-sys-color-yellow-brown-light: var(--md-ref-palette-yellow-brown40);
+    --md-sys-color-yellow-brown-container-light: var(--md-ref-palette-yellow-brown90);
+    --md-sys-color-on-yellow-brown-light: var(--md-ref-palette-yellow-brown100);
+    --md-sys-color-on-yellow-brown-container-light: var(--md-ref-palette-yellow-brown10);
+
+    /* Surface Colors */
+    --md-sys-color-surface-light: var(--md-ref-palette-neutral98);
+    --md-sys-color-surface-dim-light: var(--md-ref-palette-neutral87, var(--md-ref-palette-neutral90));
+    --md-sys-color-surface-bright-light: var(--md-ref-palette-neutral98);
+    --md-sys-color-surface-container-lowest-light: var(--md-ref-palette-neutral100);
+    --md-sys-color-surface-container-low-light: var(--md-ref-palette-neutral96, var(--md-ref-palette-neutral95));
+    --md-sys-color-surface-container-light: var(--md-ref-palette-neutral94, var(--md-ref-palette-neutral95));
+    --md-sys-color-surface-container-high-light: var(--md-ref-palette-neutral92, var(--md-ref-palette-neutral90));
+    --md-sys-color-surface-container-highest-light: var(--md-ref-palette-neutral90);
+    --md-sys-color-on-surface-light: var(--md-ref-palette-neutral10);
+    --md-sys-color-inverse-surface-light: var(--md-ref-palette-neutral20);
+    --md-sys-color-inverse-on-surface-light: var(--md-ref-palette-neutral95);
+
+    /* Surface-Variant Colors */
+    --md-sys-color-surface-variant-light: var(--md-ref-palette-neutral-variant90);
+    --md-sys-color-on-surface-variant-light: var(--md-ref-palette-neutral-variant30);
+
+    /* Background Colors */
+    --md-sys-color-background-light: var(--md-ref-palette-neutral98);
+    --md-sys-color-on-background-light: var(--md-ref-palette-neutral10);
+    
+    /* Error Colors */
+    --md-sys-color-error-light: var(--md-ref-palette-tertiary40);
+    --md-sys-color-error-container-light: var(--md-ref-palette-tertiary90);
+    --md-sys-color-on-error-light: var(--md-ref-palette-tertiary100);
+    --md-sys-color-on-error-container-light: var(--md-ref-palette-tertiary10);
+
+    /* Outline Colors */
+    --md-sys-color-outline-light: var(--md-ref-palette-neutral-variant50);
+    --md-sys-color-outline-variant-light: var(--md-ref-palette-neutral-variant80);
+
+    /* Other Colors */
+    --md-sys-color-shadow-light: var(--md-ref-palette-neutral0);
+    --md-sys-color-surface-tint-color-light: var(--md-sys-color-primary-light);
+    --md-sys-color-scrim-light: var(--md-ref-palette-neutral0);
+  }
+}
