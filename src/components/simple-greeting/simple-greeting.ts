@@ -1,13 +1,9 @@
-import {html, css, LitElement} from 'lit';
-import {customElement, property} from 'lit/decorators.js';
-import { designSystem } from "@dropbear/design-system";
+import { html } from 'lit';
+import { customElement, property } from 'lit/decorators.js';
+import { BaseElement } from '../base-element/base-element';
 
 @customElement('simple-greeting')
-export class SimpleGreeting extends LitElement {
-  static styles = [
-    designSystem,
-    css`p { color: blue }`
-  ];
+export class SimpleGreeting extends BaseElement {
 
   @property()
   name = 'World';

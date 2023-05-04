@@ -1,0 +1,59 @@
+@layer design-system.material.system.typography {
+  :root, :host {
+    /* Display Large */
+    --md-sys-typescale-display-large-font: var(--md-ref-typeface-brand);
+    --md-sys-typescale-display-large-line-height: calc((64 / var(--default-font-px)) * 1rem);
+    --md-sys-typescale-display-large-size: calc((57 / var(--default-font-px)) * 1rem);
+    --md-sys-typescale-display-large-tracking: -0.25px;
+    --md-sys-typescale-display-large-weight: var(--md-ref-typeface-weight-regular);
+
+    /* Display Medium */
+    --md-sys-typescale-display-medium-font: var(--md-ref-typeface-brand);
+    --md-sys-typescale-display-medium-line-height: calc(( 52 / var(--default-font-px)) * 1rem);
+    --md-sys-typescale-display-medium-size: calc((45 / var(--default-font-px)) * 1rem);
+    --md-sys-typescale-display-medium-tracking: 0;
+    --md-sys-typescale-display-medium-weight: var(--md-ref-typeface-weight-regular);
+
+    /* Display Small */
+    --md-sys-typescale-display-small-font: var(--md-ref-typeface-brand);
+    --md-sys-typescale-display-small-line-height: calc(( 44 / var(--default-font-px)) * 1rem);
+    --md-sys-typescale-display-small-size: calc((36 / var(--default-font-px)) * 1rem);
+    --md-sys-typescale-display-small-tracking: 0;
+    --md-sys-typescale-display-small-weight: var(--md-ref-typeface-weight-regular);
+
+    /* Headline Large */
+    --md-sys-typescale-headline-large-font: var(--md-ref-typeface-brand);
+    --md-sys-typescale-headline-large-line-height: calc(( 40 / var(--default-font-px)) * 1rem);
+    --md-sys-typescale-headline-large-size: calc(( 32 / var(--default-font-px)) * 1rem);
+    --md-sys-typescale-headline-large-tracking: 0;
+    --md-sys-typescale-headline-large-weight: var(--md-ref-typeface-weight-regular);
+
+    /* Headline Medium */
+    --md-sys-typescale-headline-medium-font: var(--md-ref-typeface-brand);
+    --md-sys-typescale-headline-medium-line-height: calc(( 36 / var(--default-font-px)) * 1rem);
+    --md-sys-typescale-headline-medium-size: calc(( 28 / var(--default-font-px)) * 1rem);
+    --md-sys-typescale-headline-medium-tracking: 0;
+    --md-sys-typescale-headline-medium-weight: var(--md-ref-typeface-weight-regular);
+
+    /* Headline Small */
+    --md-sys-typescale-headline-small-font: var(--md-ref-typeface-brand);
+    --md-sys-typescale-headline-small-line-height: calc(( 32 / var(--default-font-px)) * 1rem);
+    --md-sys-typescale-headline-small-size: calc(( 24 / var(--default-font-px)) * 1rem);
+    --md-sys-typescale-headline-small-tracking: 0;
+    --md-sys-typescale-headline-small-weight: var(--md-ref-typeface-weight-regular);
+
+    /* Body Large */
+    --md-sys-typescale-body-large-font: var(--md-ref-typeface-plain);
+    --md-sys-typescale-body-large-line-height: calc(( 24 / var(--default-font-px)) * 1rem);
+    --md-sys-typescale-body-large-size: calc(( 16 / var(--default-font-px)) * 1rem);
+    --md-sys-typescale-body-large-tracking: 0.5px;
+    --md-sys-typescale-body-large-weight: var(--md-ref-typeface-weight-regular);
+
+    /* Title Large */
+    --md-sys-typescale-title-large-font: var(--md-ref-typeface-brand);
+    --md-sys-typescale-title-large-line-height: calc(( 28 / var(--default-font-px)) * 1rem);
+    --md-sys-typescale-title-large-size: calc(( 22 / var(--default-font-px)) * 1rem);
+    --md-sys-typescale-title-large-tracking: 0;
+    --md-sys-typescale-title-large-weight: var(--md-ref-typeface-weight-regular);
+  }
+}

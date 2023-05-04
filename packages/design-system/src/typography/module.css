@@ -1,0 +1,60 @@
+@import url(reference/fonts.css);
+@import url(system/tokens.css);
+
+@layer design-system.material.modules.typography {
+  .display-large, h1 {
+    font-family: var(--md-sys-typescale-display-large-font);
+    font-weight: var(--md-sys-typescale-display-large-weight);
+    font-size: var(--md-sys-typescale-display-large-size);
+    letter-spacing: var(--md-sys-typescale-display-large-tracking);
+    line-height: var(--md-sys-typescale-display-large-line-height);
+  }
+
+  .display-medium, h2 {
+    font-family: var(--md-sys-typescale-display-medium-font);
+    font-weight: var(--md-sys-typescale-display-medium-weight);
+    font-size: var(--md-sys-typescale-display-medium-size);
+    letter-spacing: var(--md-sys-typescale-display-medium-tracking);
+    line-height: var(--md-sys-typescale-display-medium-line-height);
+  }
+
+  .display-small, h3 {
+    font-family: var(--md-sys-typescale-display-small-font);
+    font-weight: var(--md-sys-typescale-display-small-weight);
+    font-size: var(--md-sys-typescale-display-small-size);
+    letter-spacing: var(--md-sys-typescale-display-small-tracking);
+    line-height: var(--md-sys-typescale-display-small-line-height);
+  }
+
+  .headline-large {
+    font-family: var(--md-sys-typescale-headline-large-font);
+    font-weight: var(--md-sys-typescale-headline-large-weight);
+    font-size: var(--md-sys-typescale-headline-large-size);
+    letter-spacing: var(--md-sys-typescale-headline-large-tracking);
+    line-height: var(--md-sys-typescale-headline-large-line-height);
+  }
+
+  .headline-medium {
+    font-family: var(--md-sys-typescale-headline-medium-font);
+    font-weight: var(--md-sys-typescale-headline-medium-weight);
+    font-size: var(--md-sys-typescale-headline-medium-size);
+    letter-spacing: var(--md-sys-typescale-headline-medium-tracking);
+    line-height: var(--md-sys-typescale-headline-medium-line-height);
+  }
+
+  .headline-small, h4 {
+    font-family: var(--md-sys-typescale-headline-small-font);
+    font-weight: var(--md-sys-typescale-headline-small-weight);
+    font-size: var(--md-sys-typescale-headline-small-size);
+    letter-spacing: var(--md-sys-typescale-headline-small-tracking);
+    line-height: var(--md-sys-typescale-headline-small-line-height);
+  }
+
+  .body-large {
+    font-family: var(--md-sys-typescale-body-large-font);
+    font-weight: var(--md-sys-typescale-body-large-weight);
+    font-size: var(--md-sys-typescale-body-large-size);
+    letter-spacing: var(--md-sys-typescale-body-large-tracking);
+    line-height: var(--md-sys-typescale-body-large-line-height);
+  }
+}

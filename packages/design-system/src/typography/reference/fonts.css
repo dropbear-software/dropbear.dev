@@ -1,0 +1,18 @@
+@layer design-system.reference.fonts {
+  :root, :host {
+    --brand-fontstack-display: 'Roboto Flex', sans-serif;
+    --brand-fontstack-regular: 'Roboto Flex', sans-serif;
+    --default-font-weight: 400;
+    --medium-font-weight: 500;
+    --default-font-px: 16;
+  }
+}
+
+@layer design-system.material.reference.fonts {
+  :root, :host {
+    --md-ref-typeface-brand: var(--brand-fontstack-display);
+    --md-ref-typeface-plain: var(--brand-fontstack-regular);
+    --md-ref-typeface-weight-regular: var(--default-font-weight);
+    --md-ref-typeface-weight-medium: var(--medium-font-weight);
+  }
+}

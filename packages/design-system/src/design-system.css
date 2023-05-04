@@ -2,3 +2,4 @@
 
 @import url(utils/normalize.css) layer(normalize);
 @import url(color/module.css);
+@import url(typography/module.css);
