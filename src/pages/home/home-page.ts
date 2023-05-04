@@ -21,16 +21,6 @@ export class HomePage extends WebPage {
   protected override render(): TemplateResult {
     return html`
       <h1>Home Page</h1>
-      <h2>Something Else</h2>
-      <h3>Another</h3>
-      <p class="headline-large">Large Headline</p>
-      <p class="headline-medium">Medium Headline</p>
-      <h4>Small Headline H4</h4>
-      <p class="title-large">Large Title</p>
-      <p class="title-medium">Medium Title</p>
-      <p class="title-small">Small Title</p>
-      <p class="body-medium">Medium Body</p>
-      <p class="body-small">Small Body</p>
       <a href="/about">About Page</a>
       <simple-greeting .name=${"Universe"}></simple-greeting>`
     ;
