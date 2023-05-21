@@ -1,4 +1,4 @@
-import { LitElement, html } from "lit";
+import { css, html } from "lit";
 import { customElement } from "lit/decorators.js";
 import { Router } from "@lit-labs/router";
 import { provide } from '@lit-labs/context';
@@ -6,9 +6,10 @@ import { websiteConfigurationContext } from "./features/remote-config/website-co
 import { routerConfiguration } from "./features/router/router-configuration.js";
 import { PollyfillController } from "./features/pollyfills/pollyfill-controller.js";
 import { WebsiteConfigurationController } from "./features/remote-config/website-configuration-controller.js";
+import { BaseElement } from "./components/base-element/base-element.js";
 
 @customElement('dropbear-website')
-export class DropbearWebsite extends LitElement {
+export class DropbearWebsite extends BaseElement {
   #router = new Router(this, routerConfiguration);
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -19,6 +20,14 @@ export class DropbearWebsite extends LitElement {
 
   @provide({context: websiteConfigurationContext})
   context = this.#configurationController.settings;
+
+  static styles = [...BaseElement.styles, css`
+    :host {
+      background-color: var(--md-sys-color-background);
+      display: block;
+      overflow: auto;
+    }
+  `];
   
   protected override render() {
     if (this.#configurationController.ready) {
