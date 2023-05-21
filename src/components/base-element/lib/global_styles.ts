@@ -5,7 +5,6 @@ export const globalStyles: CSSResult[] = [
   designSystem,
   css`
   :host {
-    /* font-size: calc((var(--default-font-px) / 16) * 100%); */
     background-color: var(--md-sys-color-background);
     color: var(--md-sys-color-on-background);
     font-family: var(--md-sys-typescale-body-large-font);
