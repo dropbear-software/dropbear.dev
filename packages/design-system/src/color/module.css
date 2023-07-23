@@ -1,5 +1,4 @@
-@import url(reference/color-palettes.css);
-@import url(system/color-themes.css);
+@import url(system/color.css);
 
 @layer design-system.material.modules.color {
   .primary {

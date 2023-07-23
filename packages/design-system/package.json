@@ -52,7 +52,9 @@
         "dist/design-system.css.d.ts",
         "dist/design-system.css.d.ts.map"
       ],
-      "dependencies": ["build:css-to-lit"]
+      "dependencies": [
+        "build:css-to-lit"
+      ]
     },
     "build:css": {
       "command": "lightningcss --minify --bundle --targets '>= 0.25%' src/design-system.css -o dist/design-system.css",
@@ -88,6 +90,7 @@
   },
   "homepage": "https://github.com/dropbear-software/dropbear.dev#readme",
   "dependencies": {
+    "@material/material-color-utilities": "^0.2.7",
     "lit": "^2.7.2"
   }
 }
