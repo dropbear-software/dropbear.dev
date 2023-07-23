@@ -1,8 +1,9 @@
 import { customElement } from "lit/decorators.js";
-import { TemplateResult, html } from "lit";
+import { CSSResult, TemplateResult, html } from "lit";
 import { PageMetadata } from "../../components/web-page/lib/types.js";
 import { WebPage } from "../../components/web-page/web-page.js";
 import "../../components/simple-greeting/simple-greeting.js";
+import { heroSection, heroStyles } from "./blocks/hero-section.js";
 
 const homePageMetadata: PageMetadata = {
   pageTitle: 'Dropbear.dev: Modern Web Consultancy',
@@ -18,10 +19,11 @@ export class HomePage extends WebPage {
     super(pageMetadata);
   }
 
+  static styles: CSSResult[] = [...WebPage.styles, heroStyles ];
+
   protected override render(): TemplateResult {
     return html`
-      <h1>Home Page</h1>
-      <a href="/about">About Page</a>
+      ${heroSection}
       <simple-greeting .name=${"Universe"}></simple-greeting>`
     ;
   }
