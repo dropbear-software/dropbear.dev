@@ -64,6 +64,18 @@
       "output": [
         "dist/design-system.css",
         "dist/design-system.css.map"
+      ],
+      "dependencies": [
+        "build:tokens"
+      ]
+    },
+    "build:tokens": {
+      "command": "node generate-color-tokens.js",
+      "files": [
+        "generate-color-tokens.js"
+      ],
+      "output": [
+        "src/color/reference/color-tokens.css"
       ]
     },
     "build:css-to-lit": {
