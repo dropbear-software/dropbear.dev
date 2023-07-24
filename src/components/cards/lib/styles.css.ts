@@ -31,6 +31,10 @@ export const componentStyles = css`
       --md-elevation-level: 0;
       background-color: var(--md-sys-color-surface);
       border: 1px solid var(--md-sys-color-outline);
+
+      &:hover {
+        border: 1px solid var(--md-sys-color-primary);
+      }
     }
 
     &.filled {
