@@ -37,6 +37,14 @@ export class ServiceCatalogue extends BaseElement {
     return caseStudiesURL;
   }
 
+  #getOneTimeServices(): ConsultingService[] {
+    return this.#consultingServices.filter(ServiceCatalogue._isOneTimeService);
+  }
+
+  #getOngoingServices(): ConsultingService[] {
+    return this.#consultingServices.filter(ServiceCatalogue._isOngoingService);
+  }
+
   #renderServiceCards(services: ConsultingService[]): TemplateResult {
     return html`
     <ul>
@@ -74,24 +82,21 @@ export class ServiceCatalogue extends BaseElement {
   }
 
   render(): TemplateResult {
-    const ongoingServices = this.#consultingServices.filter(ServiceCatalogue._isOngoingService);
-    const onetimeServices = this.#consultingServices.filter(ServiceCatalogue._isOneTimeService);
-
     return html`
-      <section id="consultancy-section">
-        <h2 class="headline-large secondary-text">Consultancy Services</h2>
+      <section>
+        <h2 class="headline-large secondary-text">Ongoing Consultancy Services</h2>
         <p class="body-large">
           For companies currently earning more than $1M USD per year via their website and have unique circumstances and requirements that demand a more personal touch.
         </p>
-        ${this.#renderServiceCards(ongoingServices)}
+        ${this.#renderServiceCards(this.#getOngoingServices())}
       </section>
 
-      <section id="consultancy-section">
+      <section>
         <h2 class="headline-large secondary-text">One Time Services</h2>
         <p class="body-large">
           For companies currently earning more than $1M USD per year via their website and have unique circumstances and requirements that demand a more personal touch.
         </p>
-        ${this.#renderServiceCards(onetimeServices)}
+        ${this.#renderServiceCards(this.#getOneTimeServices())}
       </section>
     `;
   }

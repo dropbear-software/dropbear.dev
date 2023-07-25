@@ -1,7 +1,7 @@
 import { css } from "lit";
 
 export const componentStyles = css`
-  #consultancy-section {
+  section {
     margin-block-start: 1rem;
     margin-block-end: 1rem;
     margin-inline-start: auto;

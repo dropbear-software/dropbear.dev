@@ -33,6 +33,22 @@ const analyticsImplementation = new ConsultingService({
   serviceType: ServiceType.ONE_TIME
 });
 
+const designSystem = new ConsultingService({
+  name: 'Custom Design System',
+  alternateName: 'Design System Package',
+  identifier: 'services/design-system',
+  description: 'Something',
+  serviceType: ServiceType.ONE_TIME
+});
+
+const websiteAudits = new ConsultingService({
+  name: 'Website Audits',
+  alternateName: 'Conversion focused website audits',
+  identifier: 'services/website-audits',
+  description: 'Something',
+  serviceType: ServiceType.ONE_TIME
+});
+
 class ServicesRepository {
   #services = new Map<string, ConsultingService>();
 
@@ -56,4 +72,11 @@ class ServicesRepository {
   }
 }
 
-export const servicesRepository = new ServicesRepository([seoConsultingService, croConsultingService, devConsultingService, analyticsImplementation]);
+export const servicesRepository = new ServicesRepository([
+  seoConsultingService,
+  croConsultingService,
+  devConsultingService,
+  analyticsImplementation,
+  designSystem,
+  websiteAudits
+]);
