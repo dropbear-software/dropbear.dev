@@ -18,7 +18,10 @@ export class ContactPage extends WebPage {
     super(pageMetadata);
   }
 
-  static styles: CSSResult[] = [...WebPage.styles, heroStyles ];
+  static styles: CSSResult[] = [
+    ...WebPage.styles, 
+    heroStyles,
+  ];
 
   protected override render(): TemplateResult {
     return html`

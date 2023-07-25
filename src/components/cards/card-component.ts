@@ -6,7 +6,7 @@ import { classMap } from 'lit/directives/class-map.js';
 import "@material/web/elevation/elevation.js";
 import "@material/web/ripple/ripple.js";
 
-@customElement('card-compoent')
+@customElement('card-component')
 export class CardComponent extends BaseElement {
   static styles: CSSResult[] = [
     ...BaseElement.styles,
