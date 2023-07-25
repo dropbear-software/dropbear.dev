@@ -45,6 +45,10 @@ export class ConsultingService {
     }
   }
 
+  get serviceTypeEnum(): ServiceType {
+    return this.#serviceType;
+  }
+
   toJSON(): JSON {
     return JSON.parse(
       `{

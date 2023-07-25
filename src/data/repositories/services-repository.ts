@@ -25,6 +25,14 @@ const devConsultingService = new ConsultingService({
   serviceType: ServiceType.ONGOING
 });
 
+const analyticsImplementation = new ConsultingService({
+  name: 'Analytics Implementation',
+  alternateName: 'Google Analytics 4 Consulting',
+  identifier: 'services/analytics-consulting',
+  description: 'Something',
+  serviceType: ServiceType.ONE_TIME
+});
+
 class ServicesRepository {
   #services = new Map<string, ConsultingService>();
 
@@ -48,4 +56,4 @@ class ServicesRepository {
   }
 }
 
-export const servicesRepository = new ServicesRepository([seoConsultingService, croConsultingService, devConsultingService]);
+export const servicesRepository = new ServicesRepository([seoConsultingService, croConsultingService, devConsultingService, analyticsImplementation]);

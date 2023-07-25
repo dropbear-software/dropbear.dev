@@ -2,7 +2,7 @@ import { customElement } from "lit/decorators.js";
 import { CSSResult, TemplateResult, html } from "lit";
 import { BaseElement } from "../base-element/base-element.js";
 import { servicesRepository } from "../../data/repositories/services-repository.js";
-import type { ConsultingService } from "../../data/resources/consulting-service.js";
+import { ServiceType, type ConsultingService } from "../../data/resources/consulting-service.js";
 import { componentStyles } from "./lib/styles.js";
 import "@material/web/button/tonal-button.js";
 import "@material/web/button/outlined-button.js";
@@ -22,6 +22,14 @@ export class ServiceCatalogue extends BaseElement {
     componentStyles
   ];
 
+  private static  _isOngoingService(service: ConsultingService): boolean {
+    return service.serviceTypeEnum === ServiceType.ONGOING;
+  }
+
+  private static _isOneTimeService(service: ConsultingService): boolean {
+    return service.serviceTypeEnum === ServiceType.ONE_TIME;
+  }
+
   #getCaseStudiesUrl(resourceId: string): URL {
     // TODO: Use the correct case studies URL here later
     const caseStudiesURL = new URL(window.location.href);
@@ -29,44 +37,61 @@ export class ServiceCatalogue extends BaseElement {
     return caseStudiesURL;
   }
 
+  #renderServiceCards(services: ConsultingService[]): TemplateResult {
+    return html`
+    <ul>
+      ${services.map((service) => {
+        return html`
+        <li>
+          <card-component outlined data-resource="${service.identifier.id}" data-service-type="${service.serviceType}">
+            <header>
+              <h3 class="headline-small" title="${service.alternateName}">
+                ${service.name}
+              </h3>
+            </header>
+            <div class="body-medium" data-section="content">
+              <p>
+                ${service.description}
+              </p>
+            </div>
+            <footer>
+              <a href="${service.url.pathname}" title="${service.name} service details">
+                <md-tonal-button>See Details</md-tonal-button>
+              </a>
+              <a href="${this.#getCaseStudiesUrl(service.identifier.id).href}" title="${service.name} case studies">
+                <md-outlined-button>View Case Studies</md-outlined-button>
+              </a>
+            </footer>
+          </card-component>
+          <script type="application/ld+json">
+            ${JSON.stringify(service.toJSON())}
+          </script>
+        </li>
+        `;
+      })}
+    </ul>
+    `;
+  }
+
   render(): TemplateResult {
+    const ongoingServices = this.#consultingServices.filter(ServiceCatalogue._isOngoingService);
+    const onetimeServices = this.#consultingServices.filter(ServiceCatalogue._isOneTimeService);
+
     return html`
       <section id="consultancy-section">
         <h2 class="headline-large secondary-text">Consultancy Services</h2>
         <p class="body-large">
           For companies currently earning more than $1M USD per year via their website and have unique circumstances and requirements that demand a more personal touch.
         </p>
-        <ul>
-          ${this.#consultingServices.map((service) => {
-            return html`
-            <li>
-              <card-component outlined data-resource="${service.identifier.id}" data-service-type="${service.serviceType}">
-                <header>
-                  <h3 class="headline-small" title="${service.alternateName}">
-                    ${service.name}
-                  </h3>
-                </header>
-                <div class="body-medium" data-section="content">
-                  <p>
-                    ${service.description}
-                  </p>
-                </div>
-                <footer>
-                  <a href="${service.url.pathname}" title="${service.name} service details">
-                    <md-tonal-button>See Details</md-tonal-button>
-                  </a>
-                  <a href="${this.#getCaseStudiesUrl(service.identifier.id).href}" title="${service.name} case studies">
-                    <md-outlined-button>View Case Studies</md-outlined-button>
-                  </a>
-                </footer>
-              </card-component>
-              <script type="application/ld+json">
-                ${JSON.stringify(service.toJSON())}
-              </script>
-            </li>
-            `;
-          })}
-        </ul>
+        ${this.#renderServiceCards(ongoingServices)}
+      </section>
+
+      <section id="consultancy-section">
+        <h2 class="headline-large secondary-text">One Time Services</h2>
+        <p class="body-large">
+          For companies currently earning more than $1M USD per year via their website and have unique circumstances and requirements that demand a more personal touch.
+        </p>
+        ${this.#renderServiceCards(onetimeServices)}
       </section>
     `;
   }
