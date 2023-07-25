@@ -119,7 +119,7 @@
       ]
     },
     "preview": {
-      "command": "web-dev-server --root-dir dist --port 9000",
+      "command": "web-dev-server --root-dir dist --app-index dist/index.html --port 9000",
       "service": true,
       "dependencies": [
         "copyBuildAssets"
