@@ -13,6 +13,7 @@ export const componentStyles = css`
     border-radius: var(--card-border-radius);
     position: relative;
     display: flex;
+    flex-direction: column;
     padding-inline-start: 12px;
     padding-inline-end: 12px;
     transition-duration: 250ms;
