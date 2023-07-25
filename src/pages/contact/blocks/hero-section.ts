@@ -1,5 +1,5 @@
 import { css, html } from "lit";
-import { onlineStatsIllustration } from "../../../svg/hero-images";
+import { emailIcon } from "../../../svg/hero-images.js";
 import "@material/web/button/outlined-button.js";
 import "@material/web/button/filled-button.js";
 
@@ -7,28 +7,22 @@ export const heroSection = html`
 <header data-component="hero-section">
   <div data-section="text">
     <h1 class="primary-text">
-      <strong>Increase Website Conversions with Our Data-Driven Approach</strong>
+      <strong>Looking to get in touch? <br> We'd love to hear from you!</strong>
     </h1>
     <div class="title-large">
       <p>
-        Are you looking to increase website conversions? If so, you need to use a data-driven approach.
-        At Dropbear Software, we use data to identify and fix the problems that are preventing your website from generating leads and sales.
-      </p>
-      <p>
-        Our team of experienced marketing and development consultants has helped businesses of all shapes and sizes achieve their online goals.
-        We know what it takes to create a successful website that converts visitors into customers.
-      </p>
-      <p>
-        If you're ready to increase your website conversions, contact us today for a free consultation.
+      We are always happy to hear from our clients and potential clients. 
+      If you have any questions or would like to discuss your business needs, please do not hesitate to fill out the form on this page. 
+      We will be in touch as soon as possible.
       </p>
     </div>
     <div data-section="cta">
-      <a href="#"><md-filled-button>Primary CTA</md-filled-button></a>
-      <a href="/contact-us/"><md-outlined-button>Secondary CTA</md-outlined-button></a>
+      <a href="/"><md-filled-button>Home</md-filled-button></a>
+      <a href="#"><md-outlined-button>Secondary CTA</md-outlined-button></a>
     </div>
   </div>
   <div data-section="image" class="tertiary-text">
-    ${onlineStatsIllustration}
+    ${emailIcon}
   </div>
 </header>
 `;
@@ -45,6 +39,9 @@ export const heroStyles = css`
 
   [data-component="hero-section"] [data-section="text"]{
     max-width: 90ch;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
   }
 
   [data-component="hero-section"] [data-section="cta"]{

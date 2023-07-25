@@ -1,7 +1,8 @@
 import { customElement } from "lit/decorators.js";
-import { TemplateResult, html } from "lit";
+import { CSSResult, TemplateResult, html } from "lit";
 import { PageMetadata } from "../../components/web-page/lib/types.js";
 import { WebPage } from "../../components/web-page/web-page.js";
+import { heroSection, heroStyles } from "./blocks/hero-section.js";
 
 const aboutPageMetadata: PageMetadata = {
   pageTitle: 'About Us - Dropbear.dev',
@@ -10,23 +11,24 @@ const aboutPageMetadata: PageMetadata = {
   description: ''
 }
 
-@customElement('about-page')
-export class AboutPage extends WebPage {
+@customElement('contact-page')
+export class ContactPage extends WebPage {
 
   constructor(pageMetadata = aboutPageMetadata){
     super(pageMetadata);
   }
 
+  static styles: CSSResult[] = [...WebPage.styles, heroStyles ];
+
   protected override render(): TemplateResult {
     return html`
-      <h2>About Page</h2>
-      <a href="/">Home Page</a>
+      ${heroSection}
     `;
   }
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'about-page': AboutPage;
+    'contact-page': ContactPage;
   }
 }

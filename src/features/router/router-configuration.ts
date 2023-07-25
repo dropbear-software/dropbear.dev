@@ -16,15 +16,15 @@ export const routerConfiguration: RouteConfig[] = [
     },
   },
   {
-    name: 'about',
+    name: 'contact',
     pattern: new URLPattern(
       {
-        pathname: '/about'
+        pathname: '/contact-us{/}?'
       }
     ),
-    render: () => html`<about-page></about-page>`,
+    render: () => html`<contact-page></contact-page>`,
     enter: async () => {
-      await import('../../pages/about/about-page.js');
+      await import('../../pages/contact/contact-page.js');
       return true;
     },
   }
