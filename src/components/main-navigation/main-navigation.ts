@@ -1,10 +1,31 @@
 import { customElement, property, query } from "lit/decorators.js";
 import { BaseElement } from "../base-element/base-element.js";
-import { CSSResult, TemplateResult, html } from "lit";
+import { CSSResult, TemplateResult, html, nothing } from "lit";
 import { componentStyles } from "./lib/styles.js";
+
+interface NavigationLinks {
+  text: string,
+  href: URL
+}
 
 @customElement('main-navigation')
 export class MainNavigation extends BaseElement {
+  #menuItems: NavigationLinks[]; 
+
+  constructor(){
+    super();
+    const currentHost = window.location.origin;
+    this.#menuItems = [
+      {
+        text: 'Home',
+        href: new URL("/", currentHost)
+      },
+      {
+        text: 'Contact',
+        href: new URL("/contact-us/", currentHost)
+      }
+    ]
+  }
 
   @query('nav')
   nav!: HTMLElement;
@@ -24,8 +45,12 @@ export class MainNavigation extends BaseElement {
   ];
 
   #handleButtonClick(): void {
-    console.log('Button clicked');
     this.isOpen = this.button.getAttribute('aria-expanded') === 'false';
+    if(this.isOpen){
+      this.dispatchEvent(new CustomEvent('navigation-opened'));
+    } else {
+      this.dispatchEvent(new CustomEvent('navigation-closed'));
+    }
   }
 
   #handleKeyUp(event: KeyboardEvent): void {
@@ -45,24 +70,33 @@ export class MainNavigation extends BaseElement {
     `;
   }
 
+  #renderLinks(): TemplateResult {
+    return html`
+      <ul>
+        ${this.#menuItems.map((link) => {
+        return html`
+          <li>
+            <a href="${link.href.pathname}" aria-current="${this.#isCurrentPage(link.href) || nothing }">${link.text}</a>
+          </li>
+        `})
+      }
+      </ul>
+    `;
+  }
+
+  #isCurrentPage(url: URL){
+    if(url.pathname === window.location.pathname){
+      return 'page';
+    } else {
+      return undefined;
+    }
+  }
+
   protected override render(): TemplateResult {
     return html`
       <nav id="mainnav" @keyup="${this.#handleKeyUp}">
         ${this.#renderButton()}
-        <ul>
-          <li>
-            <a href="/home">Home</a>
-          </li>
-          <li>
-            <a href="/about-us" aria-current="page">About us</a>
-          </li>
-          <li>
-            <a href="/pricing">Pricing</a>
-          </li>
-          <li>
-            <a href="/contact">Contact</a>
-          </li>
-        </ul>
+        ${this.#renderLinks()}
       </nav>
     `;
   }

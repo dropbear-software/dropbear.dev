@@ -3,6 +3,8 @@ import { CSSResult, TemplateResult, html } from "lit";
 import { PageMetadata } from "../../components/web-page/lib/types.js";
 import { WebPage } from "../../components/web-page/web-page.js";
 import { heroSection, heroStyles } from "./blocks/hero-section.js";
+import "../../components/main-navigation/main-navigation.js";
+
 
 const aboutPageMetadata: PageMetadata = {
   pageTitle: 'About Us - Dropbear.dev',
@@ -25,6 +27,7 @@ export class ContactPage extends WebPage {
 
   protected override render(): TemplateResult {
     return html`
+      <main-navigation></main-navigation>
       ${heroSection}
     `;
   }
