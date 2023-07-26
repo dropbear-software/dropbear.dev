@@ -35,6 +35,7 @@ export const componentStyles = css`
 
       &:hover {
         border: 1px solid var(--md-sys-color-primary);
+        --md-elevation-level: 1;
       }
     }
 
