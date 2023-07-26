@@ -2,9 +2,9 @@ import { css } from "lit";
 
 export const componentStyles = css`
   :host {
-    --color-shades-dark: rgb(25, 25, 25);
-    --color-shades-light: rgb(165, 167, 175);
-    --color-highlight: rgb(24, 54, 145);
+    --navigation-color: var(--md-sys-color-on-surface-variant);
+    --color-highlight: var(--md-sys-color-primary);
+    --navigation-background-color: var(--md-sys-color-surface-variant);
   }
 
   @media (min-width: 48em) {
@@ -16,12 +16,13 @@ export const componentStyles = css`
     ul {
       --nav-list-layout: row;
       --nav-list-position: static;
-      --nav-list-padding: 0;
+      --nav-list-padding: 1.5rem;
       --nav-list-height: auto;
       --nav-list-width: 100%;
       --nav-list-shadow: none;
       --nav-list-transform: none;
       --nav-list-visibility: visible;
+      justify-content: center;
     }
   }
 
@@ -32,7 +33,7 @@ export const componentStyles = css`
 
   /* Show a custom outline on :focus-visible */
   *:focus-visible {
-    outline: 4px solid var(--color-shades-dark);
+    outline: 4px solid var(--navigation-color);
     outline-offset: 4px;
   }
 
@@ -40,11 +41,16 @@ export const componentStyles = css`
     position: var(--nav-position, fixed);
     inset-block-start: 1rem;
     inset-inline-end: 1rem;
+    z-index: 1;
+  }
+
+  svg {
+    fill: var(--md-sys-color-on-background);
   }
   
   /* Remove default list styling and create layout for list */
   ul {
-    background: rgb(255, 255, 255);
+    background: var(--navigation-background-color);
     box-shadow: var(--nav-list-shadow, -5px 0 11px 0 rgb(0 0 0 / 0.2));
     display: flex;
     flex-direction: var(--nav-list-layout, column);
@@ -74,7 +80,7 @@ export const componentStyles = css`
   
   /* Basic link styling */
   a {
-    --text-color: var(--color-shades-dark);
+    --text-color: var(--navigation-color);
     
     border-block-end: 3px solid var(--border-color, transparent);
     color: var(--text-color);
