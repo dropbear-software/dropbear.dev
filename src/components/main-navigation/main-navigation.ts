@@ -1,7 +1,8 @@
-import { customElement, property, query } from "lit/decorators.js";
+import { customElement, property, query, queryAssignedElements, state } from "lit/decorators.js";
 import { BaseElement } from "../base-element/base-element.js";
 import { CSSResult, TemplateResult, html, nothing } from "lit";
 import { componentStyles } from "./lib/styles.js";
+import { MainNavigationLink } from "./man-navigation-link.js";
 
 interface NavigationLinks {
   text: string,
@@ -10,23 +11,6 @@ interface NavigationLinks {
 
 @customElement('main-navigation')
 export class MainNavigation extends BaseElement {
-  #menuItems: NavigationLinks[]; 
-
-  constructor(){
-    super();
-    const currentHost = window.location.origin;
-    this.#menuItems = [
-      {
-        text: 'Home',
-        href: new URL("/", currentHost)
-      },
-      {
-        text: 'Contact',
-        href: new URL("/contact-us/", currentHost)
-      }
-    ]
-  }
-
   @query('nav')
   nav!: HTMLElement;
 
@@ -39,10 +23,45 @@ export class MainNavigation extends BaseElement {
   @property({ type: Boolean, attribute: 'open' })
   isOpen: boolean = false;
 
+  @queryAssignedElements({selector: 'main-navigation-link'})
+  _listItems!: Array<MainNavigationLink>;
+
+  @state()
+  _menuLinks: NavigationLinks[] = [];
+
   static styles: CSSResult[] = [
     ...BaseElement.styles,
     componentStyles
   ];
+
+  protected firstUpdated(): void {
+    this.#warnOnNoChildren();
+  }
+
+  #handleSlotChange(): void {
+    this.#warnOnNoChildren();
+    this.#processSlottedLinks();
+  }
+
+  #processSlottedLinks(): void {
+    this._listItems.forEach((link) => {
+      if (link.href && link.text) {
+        this._menuLinks.push({
+          text: link.text,
+          href: new URL(link.href, window.location.origin)
+        })
+      } else {
+        console.warn('main-navigation-link element was missing required name or href attributes', link);
+      }
+    });
+    this.requestUpdate();
+  }
+
+  #warnOnNoChildren(): void {
+    if (this._listItems.length === 0) {
+      console.warn('No main-navigation-link elements found for main-navigation');
+    }
+  }
 
   #handleButtonClick(): void {
     this.isOpen = this.button.getAttribute('aria-expanded') === 'false';
@@ -73,7 +92,7 @@ export class MainNavigation extends BaseElement {
   #renderLinks(): TemplateResult {
     return html`
       <ul>
-        ${this.#menuItems.map((link) => {
+        ${this._menuLinks.map((link) => {
         return html`
           <li>
             <a href="${link.href.pathname}" aria-current="${this.#isCurrentPage(link.href) || nothing }">${link.text}</a>
@@ -94,8 +113,9 @@ export class MainNavigation extends BaseElement {
 
   protected override render(): TemplateResult {
     return html`
+      <slot @slotchange="${this.#handleSlotChange}"></slot>
       <nav id="mainnav" @keyup="${this.#handleKeyUp}">
-        ${this.#renderButton()}
+        ${this.#renderButton()}    
         ${this.#renderLinks()}
       </nav>
     `;
