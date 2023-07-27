@@ -11,23 +11,17 @@ interface NavigationLinks {
 
 @customElement('main-navigation')
 export class MainNavigation extends BaseElement {
-  @query('nav')
-  nav!: HTMLElement;
-
-  @query('ul')
-  list!: HTMLUListElement;
+  @property({ type: Boolean})
+  open: boolean = false;
 
   @query('button')
-  button!: HTMLButtonElement;
-
-  @property({ type: Boolean, attribute: 'open' })
-  isOpen: boolean = false;
+  private _button!: HTMLButtonElement;
 
   @queryAssignedElements({selector: 'main-navigation-link'})
-  _listItems!: Array<MainNavigationLink>;
+  private _listItems!: Array<MainNavigationLink>;
 
   @state()
-  _menuLinks: NavigationLinks[] = [];
+  private _menuLinks: NavigationLinks[] = [];
 
   static styles: CSSResult[] = [
     ...BaseElement.styles,
@@ -64,8 +58,8 @@ export class MainNavigation extends BaseElement {
   }
 
   #handleButtonClick(): void {
-    this.isOpen = this.button.getAttribute('aria-expanded') === 'false';
-    if(this.isOpen){
+    this.open = this._button.getAttribute('aria-expanded') === 'false';
+    if(this.open){
       this.dispatchEvent(new CustomEvent('navigation-opened'));
     } else {
       this.dispatchEvent(new CustomEvent('navigation-closed'));
@@ -74,16 +68,16 @@ export class MainNavigation extends BaseElement {
 
   #handleKeyUp(event: KeyboardEvent): void {
     if (event.code === 'Escape') {
-      this.isOpen = false;
-      this.button.focus();
+      this.open = false;
+      this._button.focus();
     }
   }
 
   #renderButton(): TemplateResult {
     return html`
-      <button type="button" aria-expanded="${this.isOpen}" aria-label="Menu" aria-controls="mainnav" @click="${this.#handleButtonClick}">
-        <svg width="24" height="24" aria-hidden="true">
-          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z">
+      <button type="button" aria-expanded="${this.open}" aria-label="Menu" aria-controls="mainnav" @click="${this.#handleButtonClick}">
+        <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48" aria-hidden="true">
+          <path d="M120-240v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/>
         </svg>
       </button>
     `;

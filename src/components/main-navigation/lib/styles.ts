@@ -5,9 +5,14 @@ export const componentStyles = css`
     --navigation-color: var(--md-sys-color-on-surface-variant);
     --color-highlight: var(--md-sys-color-primary);
     --navigation-background-color: var(--md-sys-color-surface-variant);
+    display: inline-block;
   }
 
   @media (min-width: 48em) {
+    :host {
+      display: inline;
+    }
+
     nav {
       --nav-button-display: none;
       --nav-position: static;
