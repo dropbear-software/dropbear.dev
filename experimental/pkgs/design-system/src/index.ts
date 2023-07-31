@@ -1,1 +1,1 @@
-export const something = true;
+export {designSystem} from "./design-system.js";
