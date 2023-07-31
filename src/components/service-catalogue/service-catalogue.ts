@@ -5,7 +5,7 @@ import { servicesRepository } from "../../data/repositories/services-repository.
 import { ServiceType, type ConsultingService } from "../../data/resources/consulting-service.js";
 import { componentStyles } from "./lib/styles.js";
 import "@material/web/button/tonal-button.js";
-import "@material/web/button/outlined-button.js";
+import "@material/web/button/text-button.js";
 import "../cards/card-component.js";
 
 @customElement('service-catalogue')
@@ -67,7 +67,7 @@ export class ServiceCatalogue extends BaseElement {
                 <md-tonal-button>See Details</md-tonal-button>
               </a>
               <a href="${this.#getCaseStudiesUrl(service.identifier.id).href}" title="${service.name} case studies">
-                <md-outlined-button>View Case Studies</md-outlined-button>
+                <md-text-button>View Case Studies</md-text-button>
               </a>
             </footer>
           </card-component>
@@ -92,7 +92,7 @@ export class ServiceCatalogue extends BaseElement {
       </section>
 
       <section>
-        <h2 class="headline-large secondary-text">One Time Services</h2>
+        <h2 class="headline-large secondary-text">Core Growth Services</h2>
         <p class="body-large">
           For companies currently earning more than $1M USD per year via their website and have unique circumstances and requirements that demand a more personal touch.
         </p>
