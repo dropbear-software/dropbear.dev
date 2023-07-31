@@ -1,0 +1,39 @@
+{
+  "name": "@dropbear/experimental-server",
+  "version": "0.0.1",
+  "description": "An experimental design to look at a Cloud Native SSR approach",
+  "type": "module",
+  "private": true,
+  "bin": {
+    "experimental-server": "bin/website-server.js"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "exports": {
+    ".": "./lib/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "wireit"
+  },
+  "author": "",
+  "license": "ISC",
+  "workspaces": [
+    "pkgs/design-system",
+    "pkgs/webserver",
+    "pkgs/website"
+  ],
+  "devDependencies": {
+    "typescript": "^5.1.6",
+    "wireit": "^0.10.0"
+  },
+  "wireit": {
+    "build":{
+      "command": "tsc --build --pretty",
+      "clean": "if-file-deleted",
+      "files": ["src/**/*.ts", "tsconfig.json"],
+      "output": ["lib/**", ".tsbuildinfo"]
+    }
+  }
+}
