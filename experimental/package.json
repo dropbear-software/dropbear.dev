@@ -12,8 +12,11 @@
   "directories": {
     "lib": "lib"
   },
-  "exports": {
-    ".": "./lib/index.js"
+  ".": {
+    "import": {
+      "types": "./types/index.d.ts",
+      "default": "./lib/index.js"
+    }
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
