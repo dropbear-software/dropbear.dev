@@ -2,6 +2,7 @@
   "name": "@dropbear/web-design-system",
   "version": "0.0.1",
   "description": "",
+  "type": "module",
   "main": "lib/index.js",
   "types": "types/index.d.ts",
   "directories": {
