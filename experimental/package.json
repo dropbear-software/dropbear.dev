@@ -4,6 +4,8 @@
   "description": "An experimental design to look at a Cloud Native SSR approach",
   "type": "module",
   "private": true,
+  "main": "./lib/index.js",
+  "types": "./types/index.d.ts",
   "bin": {
     "experimental-server": "bin/website-server.js"
   },
@@ -30,6 +32,12 @@
   },
   "wireit": {
     "build":{
+      "dependencies": [
+        "./pkgs/webserver:build",
+        "compile:typescript"
+      ]
+    },
+    "compile:typescript": {
       "command": "tsc --build --pretty",
       "clean": "if-file-deleted",
       "files": ["src/**/*.ts", "tsconfig.json"],
