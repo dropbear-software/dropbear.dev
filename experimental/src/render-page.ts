@@ -11,6 +11,7 @@ export function* renderIndex(props: RenderIndexProps) {
     <!doctype html>
     <html>
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Lit SSR Test Page</title>
       </head>
       <style>
@@ -34,7 +35,9 @@ export function* renderIndex(props: RenderIndexProps) {
             "@webcomponents/template-shadowroot/template-shadowroot.js": "https://ga.jspm.io/npm:@webcomponents/template-shadowroot@0.2.1/template-shadowroot.js",
             "lit": "https://ga.jspm.io/npm:lit@2.7.6/index.js",
             "lit/decorators.js": "https://ga.jspm.io/npm:lit@2.7.6/decorators.js",
-            "tslib": "https://ga.jspm.io/npm:tslib@2.6.0/tslib.es6.mjs"
+            "tslib": "https://ga.jspm.io/npm:tslib@2.6.0/tslib.es6.mjs",
+            "@dropbear/website": "/packages/website/lib/index.js",
+            "@dropbear/design-system": "/packages/design-system/lib/index.js"
           },
           "scopes": {
             "https://ga.jspm.io/": {
@@ -77,7 +80,11 @@ export function* renderIndex(props: RenderIndexProps) {
         await litHydrateSupportInstalled;
 
         // Import component modules causing them to become interactive
-        import('./components/simple-greeter/simple-greeter.js');
+        import('/packages/website/lib/components/simple-greeter/simple-greeter.js');
+
+        import sheet from '/packages/design-system/css/lib/material-theme/index.css' assert { type: 'css' };
+
+        document.adoptedStyleSheets = [sheet];
       </script>
     </body>
     </html>
