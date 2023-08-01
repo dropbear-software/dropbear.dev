@@ -1,8 +1,8 @@
 import { CSSResult, TemplateResult, html } from "lit";
 import { BaseElement } from "../base-element/base_element.js";
 import { property } from "lit/decorators.js";
-import { HeroSectionContent } from "../../controllers/home-page-controller.js";
 import { heroStyles } from "./styles.css.js";
+import { HeroSectionContent } from "./hero-section-content.js";
 
 export class HeroSection extends BaseElement {
   @property({ type: Object})

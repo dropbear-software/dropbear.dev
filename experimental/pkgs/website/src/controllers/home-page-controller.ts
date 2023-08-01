@@ -1,4 +1,5 @@
-import { ReactiveController, ReactiveControllerHost, TemplateResult, html } from "lit";
+import { html } from "lit";
+import { HeroSectionContent } from "../components/hero-section/hero-section-content.js";
 
 export const homepageContent: HeroSectionContent = {
     headline: html`<strong>Increase Website Conversions with Our Data-Driven Approach</strong>`,
@@ -20,60 +21,6 @@ export const homepageContent: HeroSectionContent = {
     secondaryButton: {
       text: 'Secondary Action',
       destination: '#'
-    }
+    },
+    heroImageSvg: html``
 };
-
-export interface HeroSectionContent {
-  headline: string | TemplateResult,
-  leadText: string | TemplateResult,
-  primaryButton: {
-    text: string,
-    destination: string,
-  },
-  secondaryButton : {
-    text: string,
-    destination: string
-  },
-  heroImageSvg: TemplateResult
-}
-
-export class HeroSectionController implements ReactiveController {
-  #host: ReactiveControllerHost
-
-  #content : HeroSectionContent
-
-  constructor(host: ReactiveControllerHost, content: HeroSectionContent){
-    (this.#host = host).addController(this);
-    this.#content = content;
-  }
-
-  hostConnected(){
-    console.log('Hero Host is connected');
-  }
-
-  heroSection(heroImageSvg: TemplateResult): TemplateResult {
-    return html`
-      <header data-component="hero-section">
-        <div data-section="text">
-          <h1 class="primary-text">
-            ${this.#content.headline}
-          </h1>
-          <div class="title-large">
-            ${this.#content.leadText}
-          </div>
-          <div data-section="cta">
-            <a href="${this.#content.primaryButton.destination}">
-              <md-filled-button>${this.#content.primaryButton.text}</md-filled-button>
-            </a>
-            <a href="${this.#content.secondaryButton.destination}">
-              <md-outlined-button>${this.#content.secondaryButton.text}</md-outlined-button>
-            </a>
-          </div>
-        </div>
-        <div data-section="image" class="tertiary-text">
-          ${this.#content.heroImageSvg}
-        </div>
-      </header>
-    `;
-  }
-}
