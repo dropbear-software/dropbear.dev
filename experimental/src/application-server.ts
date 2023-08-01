@@ -22,7 +22,7 @@ export class ApplicationServer {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     this.#fastifyServer.get('/', async (_request, reply) => {
       if (this.#ssrEnabled) {
-        const result = new RenderResultReadable(renderIndex({ name: 'Friend' }))
+        const result = new RenderResultReadable(renderIndex({ name: 'Friend' }));
         reply
         .header('Content-Type', 'text/html; charset=utf-8;')
         .send(result)
