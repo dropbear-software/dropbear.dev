@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 
-import { WebsiteServer } from "@dropbear/experimental-server";
+import { WebsiteServer } from "../lib/index.js";
 
 function runApp() {
   const server = new WebsiteServer(3001);
+  server.start();
   console.log(`Server: ${server}`);
 }
 
