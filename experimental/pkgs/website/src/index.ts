@@ -1,1 +1,1 @@
-export {HomePage} from "./pages/home_page.js";
+export {HomePage} from "./controllers/home_page.js";

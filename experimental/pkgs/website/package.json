@@ -29,13 +29,13 @@
     "wireit": "^0.10.0"
   },
   "wireit": {
-    "build":{
+    "build": {
       "dependencies": [
         "../design-system:build",
         "compile:typescript"
       ]
     },
-    "build:clean":{
+    "build:clean": {
       "command": "npm run build",
       "env": {
         "WIREIT_CACHE": "none"
@@ -44,8 +44,18 @@
     "compile:typescript": {
       "command": "tsc --build --pretty",
       "clean": "if-file-deleted",
-      "files": ["src/**/*.ts", "tsconfig.json"],
-      "output": ["lib/**", "tsconfig.tsbuildinfo", "types/**"]
+      "files": [
+        "src/**/*.ts",
+        "tsconfig.json"
+      ],
+      "output": [
+        "lib/**",
+        "tsconfig.tsbuildinfo",
+        "types/**"
+      ]
     }
+  },
+  "dependencies": {
+    "lit": "^2.7.6"
   }
 }
