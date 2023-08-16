@@ -1,9 +1,10 @@
 import { CSSResult, TemplateResult, html } from "lit";
 import { BaseElement } from "../base-element/base_element.js";
-import { property } from "lit/decorators.js";
+import { customElement, property } from "lit/decorators.js";
 import { heroStyles } from "./styles.css.js";
 import { HeroSectionContent } from "./hero-section-content.js";
 
+@customElement('hero-section')
 export class HeroSection extends BaseElement {
   @property({ type: Object})
   content: HeroSectionContent | undefined
@@ -38,5 +39,11 @@ export class HeroSection extends BaseElement {
         </div>
       </header>
     `;
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'hero-section': HeroSection;
   }
 }

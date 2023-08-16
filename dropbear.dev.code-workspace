@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "experimental"
+		},
+		{
+			"path": "experimental/pkgs/website"
+		},
+		{
+			"path": "experimental/pkgs/design-system"
+		},
+		{
+			"path": "experimental/pkgs/webserver"
+		}
+	],
+	"settings": {}
+}

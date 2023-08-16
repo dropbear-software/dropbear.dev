@@ -1,16 +1,13 @@
-import { RenderResultReadable } from '@lit-labs/ssr/lib/render-result-readable.js';
 import Fastify from 'fastify'
-import { renderIndex } from './render-page.js';
 import {fastifyStatic} from '@fastify/static';
 import { fileURLToPath } from "node:url";
+import { HomepageRequestController } from './homepage-request-controller.js';
 
 
 export class ApplicationServer {
   #port: number;
 
   #fastifyServer;
-
-  #ssrEnabled = true;
 
   constructor(portNumber: string, loggingEnabled: boolean) {
     this.#port = parseInt(portNumber);
@@ -19,19 +16,7 @@ export class ApplicationServer {
   }
 
   installRoutes(){
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    this.#fastifyServer.get('/', async (_request, reply) => {
-      if (this.#ssrEnabled) {
-        const result = new RenderResultReadable(renderIndex({ name: 'Friend' }));
-        reply
-        .header('Content-Type', 'text/html; charset=utf-8;')
-        .send(result)
-      } else {
-        reply
-        .header('Content-Type', 'text/html; charset=utf-8;')
-        .send("<html><body><h1>Not Enabled</h1></body></html>")
-      }
-    });
+    this.#fastifyServer.get('/', async (request, reply) => new HomepageRequestController().handleRequest(request, reply));
 
     const websitePackageUrl = new URL('../pkgs/website/', import.meta.url);
     const designPackageUrl = new URL('../pkgs/design-system/', import.meta.url);
