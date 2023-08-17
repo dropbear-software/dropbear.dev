@@ -2,12 +2,6 @@ import { fileURLToPath } from "node:url";
 import { writeFileSync } from "node:fs"
 import { Hct, themeFromSourceColor, rgbaFromArgb } from "@material/material-color-utilities";
 
-const brandColor = {
-  hue: 275.3073139015702,
-  chroma: 63.629030455186026,
-  tone: 33.737227362632694
-}
-
 const outputFilePath = new URL("../css/src/material-theme/color/color-tokens.css", import.meta.url);
 
 class ColorPaletteGenerator {
@@ -17,15 +11,10 @@ class ColorPaletteGenerator {
 
   #outputFile;
 
-  constructor(){
-    const config = this.#getConfigArguments();
+  constructor(config){
     this.#brandHct = Hct.from(config.hue, config.chroma, config.tone);
     this.#brandTheme = themeFromSourceColor(this.#brandHct);
     this.#outputFile = fileURLToPath(outputFilePath);
-  }
-
-  #getConfigArguments(){
-    return brandColor;
   }
 
   get fileContents(){
@@ -171,5 +160,11 @@ class ColorPaletteGenerator {
   }
 }
 
-const generator = new ColorPaletteGenerator();
+const brandColor = {
+  hue: 275.3073139015702,
+  chroma: 63.629030455186026,
+  tone: 33.737227362632694
+}
+
+const generator = new ColorPaletteGenerator(brandColor);
 generator.writeToFile();
