@@ -6,11 +6,14 @@ export const homepageContent = (nonce: string) => {
   <head>
     <meta charset="UTF-8">
     <title>Dropbear.dev</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100;8..144,400;8..144,500;8..144,700&display=swap" rel="stylesheet" nonce="${nonce}">
     <link rel="stylesheet" href="/packages/design-system/css/lib/material-theme/index.css" nonce="${nonce}">
     <meta name="robots" content="noindex">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script nonce="${nonce}">window.dataLayer = [];</script>
-    <style>body { margin: 0; }</style>
+    <style nonce="${nonce}">body { margin: 0; }</style>
   </head>
   <body class="surface on-surface-text">
     <home-page></home-page>
