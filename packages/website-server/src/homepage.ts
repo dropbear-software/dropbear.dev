@@ -14,6 +14,7 @@ export const homepageContent = (nonce: string) => {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script nonce="${nonce}">window.dataLayer = [];</script>
     <style nonce="${nonce}">body { margin: 0; }</style>
+    <style>body {background: black}</style>
   </head>
   <body class="surface on-surface-text">
     <home-page></home-page>
