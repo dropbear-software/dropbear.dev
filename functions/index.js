@@ -7,9 +7,9 @@
  * See a full list of supported triggers at https://firebase.google.com/docs/functions
  */
 
-import logger from 'firebase-functions/logger';
-import { onRequest } from 'firebase-functions/v2/https';
-import { homepageContent } from './homepage.js';
+import logger from "firebase-functions/logger";
+import {onRequest} from "firebase-functions/v2/https";
+import {homepageContent} from "./homepage.js";
 
 export const helloWorld = onRequest((request, response) => {
   logger.info("Serving Home Page", {structuredData: true});
