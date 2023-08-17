@@ -7,7 +7,7 @@ import { initializeApp } from "firebase/app";
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyD3dTU4IFCav2DHb8kWXMqo82uynNNJpOg",
-  authDomain: "dropbear-website-prod.firebaseapp.com",
+  authDomain: "dropbear.dev",
   projectId: "dropbear-website-prod",
   storageBucket: "dropbear-website-prod.appspot.com",
   messagingSenderId: "162976027192",
