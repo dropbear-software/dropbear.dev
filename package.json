@@ -26,7 +26,8 @@
   },
   "homepage": "https://github.com/dropbear-software/dropbear.dev#readme",
   "devDependencies": {
-    "wireit": "^0.10.0"
+    "wireit": "^0.10.0",
+    "zx": "^7.2.3"
   },
   "workspaces": [
     "packages/design-system"
@@ -36,8 +37,14 @@
       "command": "firebase emulators:start",
       "service": true,
       "dependencies": [
-        "./packages/design-system:build",
+        "copy:assets",
         "./packages/website-server:build"
+      ]
+    },
+    "copy:assets": {
+      "command": "zx tool/copy-assets.js",
+      "dependencies": [
+        "./packages/design-system:build"
       ]
     },
     "deploy": {
@@ -50,5 +57,8 @@
         "./packages/website-server:build"
       ]
     }
+  },
+  "dependencies": {
+    "firebase-functions": "^4.4.1"
   }
 }
