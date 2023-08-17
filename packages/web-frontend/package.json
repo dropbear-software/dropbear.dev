@@ -1,0 +1,63 @@
+{
+  "name": "@dropbear/web-frontend",
+  "version": "0.0.1",
+  "description": "",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "types/index.d.ts",
+  "private": true,
+  "directories": {
+    "lib": "lib"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./types/index.d.ts",
+        "default": "./lib/index.js"
+      }
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "wireit",
+    "build:clean": "wireit"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.1.6",
+    "wireit": "^0.10.0"
+  },
+  "wireit": {
+    "build": {
+      "dependencies": [
+        "../design-system:build",
+        "compile:typescript"
+      ]
+    },
+    "build:clean": {
+      "command": "npm run build",
+      "env": {
+        "WIREIT_CACHE": "none"
+      }
+    },
+    "compile:typescript": {
+      "command": "tsc --build --pretty",
+      "clean": "if-file-deleted",
+      "files": [
+        "src/**/*.ts",
+        "tsconfig.json"
+      ],
+      "output": [
+        "lib/**",
+        "tsconfig.tsbuildinfo",
+        "types/**"
+      ]
+    }
+  },
+  "dependencies": {
+    "@lit-labs/context": "^0.4.0",
+    "lit": "^2.7.6",
+    "tslib": "^2.6.1"
+  }
+}

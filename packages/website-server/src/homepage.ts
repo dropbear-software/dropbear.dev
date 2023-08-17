@@ -10,17 +10,21 @@ export const homepageContent = (nonce: string) => {
     <meta name="robots" content="noindex">
   </head>
   <body class="surface on-surface-text">
-    <h1>Dropbear: Modern Web Consultancy</h1>
-    <p>Coming Soon!</p>
+    <home-page></home-page>
     <script type="importmap" nonce="${nonce}">
     {
       "imports": {
         "@lit-labs/ssr-client": "https://ga.jspm.io/npm:@lit-labs/ssr-client@1.1.2/development/index.js",
         "@lit-labs/ssr-client/lit-element-hydrate-support.js": "https://ga.jspm.io/npm:@lit-labs/ssr-client@1.1.2/development/lit-element-hydrate-support.js",
+        "@material/web/button/filled-button.js": "https://ga.jspm.io/npm:@material/web@1.0.0-pre.15/button/filled-button.js",
+        "@material/web/button/outlined-button.js": "https://ga.jspm.io/npm:@material/web@1.0.0-pre.15/button/outlined-button.js",
         "@webcomponents/template-shadowroot/template-shadowroot.js": "https://ga.jspm.io/npm:@webcomponents/template-shadowroot@0.2.1/template-shadowroot.js",
         "lit": "https://ga.jspm.io/npm:lit@2.7.6/index.js",
         "lit/decorators.js": "https://ga.jspm.io/npm:lit@2.7.6/decorators.js",
-        "tslib": "https://ga.jspm.io/npm:tslib@2.6.0/tslib.es6.mjs"
+        "lit/directives/class-map.js": "https://ga.jspm.io/npm:lit@2.7.6/directives/class-map.js",
+        "lit/static-html.js": "https://ga.jspm.io/npm:lit@2.7.6/static-html.js",
+        "tslib": "https://ga.jspm.io/npm:tslib@2.6.0/tslib.es6.mjs",
+        "@dropbear/web-design-system": "/packages/design-system/lib/index.js"
       },
       "scopes": {
         "https://ga.jspm.io/": {
@@ -39,7 +43,7 @@ export const homepageContent = (nonce: string) => {
       window.esmsInitOptions = { polyfillEnable: ['css-modules', 'json-modules'] }
     </script>
     <script async src="https://ga.jspm.io/npm:es-module-shims@1.8.0/dist/es-module-shims.js" crossorigin="anonymous" nonce="${nonce}"></script>
-    <script type="module" src="/packages/design-system/lib/index.js" nonce="${nonce}"></script>
+    <script type="module" src="/packages/web-frontend/lib/pages/home/homepage.js" nonce="${nonce}"></script>
   </body>
 </html>
 `;

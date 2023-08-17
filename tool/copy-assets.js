@@ -40,4 +40,16 @@ const copyDesignSystem = () => {
   updateSourceMapUrl(`${designSystem.css.outputDirectory}/material-theme/index.css`, './index.css.map');
 };
 
+const copyFrontEnd = () => {
+  const frontEndModule = {
+    js: {
+      inputDirectory: fileURLToPath(new URL("../packages/web-frontend/lib", import.meta.url)),
+      outputDirectory: fileURLToPath(new URL("../public/packages/web-frontend/lib", import.meta.url))
+    }
+  };
+
+  fs.copySync(frontEndModule.js.inputDirectory, frontEndModule.js.outputDirectory);
+};
+
 copyDesignSystem();
+copyFrontEnd();

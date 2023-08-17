@@ -32,15 +32,17 @@
   },
   "workspaces": [
     "packages/design-system",
-    "packages/website-server"
+    "packages/website-server",
+    "packages/web-frontend"
   ],
   "wireit": {
     "start": {
       "command": "firebase emulators:start",
       "service": true,
       "dependencies": [
-        "copy:assets",
-        "./packages/website-server:build"
+        "./packages/website-server:build",
+        "./packages/web-frontend:build",
+        "copy:assets"
       ]
     },
     "copy:assets": {
@@ -56,11 +58,11 @@
       },
       "dependencies": [
         "./packages/design-system:build",
-        "./packages/website-server:build"
+        "./packages/website-server:build",
+        "copy:assets"
       ]
     }
   },
   "dependencies": {
-    "firebase-functions": "^4.4.1"
   }
 }
