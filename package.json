@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Dropbear.dev website",
   "main": "lib/app_shell.js",
+  "module": "lib/app_shell.js",
   "type": "module",
   "private": true,
   "exports": {
@@ -12,7 +13,8 @@
     }
   },
   "scripts": {
-    "start": "wireit"
+    "start": "wireit",
+    "deploy": "wireit"
   },
   "repository": {
     "type": "git",
@@ -26,16 +28,27 @@
   "devDependencies": {
     "wireit": "^0.10.0"
   },
-  "dependencies": {
-  },
-  "workspaces":[
-    "packages/website-server",
+  "workspaces": [
     "packages/design-system"
   ],
   "wireit": {
     "start": {
       "command": "firebase emulators:start",
-      "service": true
+      "service": true,
+      "dependencies": [
+        "./packages/design-system:build",
+        "./packages/website-server:build"
+      ]
+    },
+    "deploy": {
+      "command": "firebase deploy",
+      "env": {
+        "CI": "true"
+      },
+      "dependencies": [
+        "./packages/design-system:build",
+        "./packages/website-server:build"
+      ]
     }
   }
 }
