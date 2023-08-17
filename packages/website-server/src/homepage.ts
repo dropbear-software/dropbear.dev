@@ -1,15 +1,18 @@
-export const homepageContent = `
-<html>
+/* eslint max-len: "off" */
+
+export const homepageContent = (nonce: string) => {
+return `<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <title>Dropbear.dev</title>
-    <link rel="stylesheet" href="/packages/design-system/css/lib/material-theme/index.css">
+    <link rel="stylesheet" href="/packages/design-system/css/lib/material-theme/index.css" nonce="${nonce}">
     <meta name="robots" content="noindex">
   </head>
   <body class="surface on-surface-text">
     <h1>Dropbear: Modern Web Consultancy</h1>
     <p>Coming Soon!</p>
-    <script type="importmap">
+    <script type="importmap" nonce="${nonce}">
     {
       "imports": {
         "@lit-labs/ssr-client": "https://ga.jspm.io/npm:@lit-labs/ssr-client@1.1.2/development/index.js",
@@ -32,8 +35,11 @@ export const homepageContent = `
     </script>
     
     <!-- ES Module Shims: Import maps polyfill for older browsers without import maps support (eg Safari 16.3) -->
-    <script async src="https://ga.jspm.io/npm:es-module-shims@1.8.0/dist/es-module-shims.js" crossorigin="anonymous"></script>
-    <script type="module" src="/packages/design-system/lib/index.js"></script>
+    <script nonce="${nonce}">
+      window.esmsInitOptions = { polyfillEnable: ['css-modules', 'json-modules'] }
+    </script>
+    <script async src="https://ga.jspm.io/npm:es-module-shims@1.8.0/dist/es-module-shims.js" crossorigin="anonymous" nonce="${nonce}"></script>
+    <script type="module" src="/packages/design-system/lib/index.js" nonce="${nonce}"></script>
   </body>
 </html>
-`;
+`};
