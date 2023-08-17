@@ -26,11 +26,13 @@
   },
   "homepage": "https://github.com/dropbear-software/dropbear.dev#readme",
   "devDependencies": {
+    "eslint-plugin-import": "^2.28.0",
     "wireit": "^0.10.0",
     "zx": "^7.2.3"
   },
   "workspaces": [
-    "packages/design-system"
+    "packages/design-system",
+    "packages/website-server"
   ],
   "wireit": {
     "start": {
