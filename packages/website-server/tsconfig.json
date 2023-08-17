@@ -1,12 +1,18 @@
 {
   "compilerOptions": {
-    "module":"NodeNext",
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "outDir": "lib",
-    "sourceMap": true,
-    "strict": true,
-    "target": "ES2021"
+    "incremental": true,                              /* Save .tsbuildinfo files to allow for incremental compilation of projects. */
+    "tsBuildInfoFile": "./tsconfig.tsbuildinfo",      /* Specify the path to .tsbuildinfo incremental compilation file. */
+    "module":"NodeNext",                              /* Specify what module code is generated. */
+    "noImplicitReturns": true,                        /* Enable error reporting for codepaths that do not explicitly return in a function. */
+    "noUnusedLocals": true,                           /* Enable error reporting when local variables aren't read. */
+    "outDir": "lib",                                  /* Specify an output folder for all emitted files. */
+    "sourceMap": true,                                /* Create source map files for emitted JavaScript files. */
+    "strict": true,                                   /* Enable all strict type-checking options. */
+    "target": "ES2021",                               /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+    "forceConsistentCasingInFileNames": true,         /* Ensure that casing is correct in imports. */
+    "declarationDir": "./types",                      /* Specify the output directory for generated declaration files. */
+    "declaration": true,                              /* Generate .d.ts files from TypeScript and JavaScript files in your project. */
+    "declarationMap": true,                           /* Create sourcemaps for d.ts files. */
   },
   "compileOnSave": true,
   "include": [

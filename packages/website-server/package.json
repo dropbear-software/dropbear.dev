@@ -1,22 +1,24 @@
 {
   "name": "@dropbear/website-server",
   "type": "module",
+  "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.ts .",
     "lint:fix": "eslint --fix --ext .js,.ts .",
-    "build": "tsc",
+    "build": "wireit",
     "build:watch": "tsc --watch",
-    "serve": "npm run build && firebase emulators:start --only functions",
-    "shell": "npm run build && firebase functions:shell",
+    "serve": "wireit",
+    "shell": "wireit",
     "start": "npm run shell",
+    "start:ff": "wireit",
     "deploy": "firebase deploy --only functions",
-    "logs": "firebase functions:log",
-    "altstart": "functions-framework --target=helloWorld"
+    "logs": "firebase functions:log"
   },
   "engines": {
     "node": "18"
   },
   "main": "lib/index.js",
+  "module": "lib/index.js",
   "dependencies": {
     "@google-cloud/functions-framework": "^3.3.0",
     "firebase-admin": "^11.8.0",
@@ -29,7 +31,49 @@
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-import": "^2.25.4",
     "firebase-functions-test": "^3.1.0",
-    "typescript": "^5.1.0"
+    "typescript": "^5.1.0",
+    "wireit": "^0.10.0"
   },
-  "private": true
+  "wireit": {
+    "build":{
+      "dependencies": [
+        "compile:typescript"
+      ]
+    },
+    "compile:typescript": {
+      "command": "tsc --build --pretty",
+      "clean": "if-file-deleted",
+      "files": [
+        "src/**/*.ts",
+        "tsconfig.json",
+        "tsconfig.dev.json"
+      ],
+      "output": [
+        "lib/**",
+        "tsconfig.tsbuildinfo",
+        "types/**"
+      ]
+    },
+    "serve":{
+      "command": "firebase emulators:start --only functions",
+      "service": true,
+      "dependencies": [
+        "compile:typescript"
+      ]
+    },
+    "shell":{
+      "command": "firebase functions:shell",
+      "service": true,
+      "dependencies": [
+        "compile:typescript"
+      ]
+    },
+    "start:ff":{
+      "command": "functions-framework --target=helloWorld",
+      "service": true,
+      "dependencies": [
+        "compile:typescript"
+      ]
+    }
+  }
 }
