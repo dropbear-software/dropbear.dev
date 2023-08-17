@@ -55,7 +55,8 @@ export const homepageContent = (nonce: string) => {
     </script>
     <script async src="https://ga.jspm.io/npm:es-module-shims@1.8.0/dist/es-module-shims.js" crossorigin="anonymous" nonce="${nonce}"></script>
     <script type="module" src="/packages/web-frontend/lib/pages/home/homepage.js" nonce="${nonce}"></script>
-    <script type="module" src="/packages/web-frontend/lib/firebase-config.js" nonce="${nonce}"></script>
+    <script type="module" src="/packages/web-frontend/lib/services/firebase.js" nonce="${nonce}"></script>
+    <script type="module" src="/packages/web-frontend/lib/services/csa.js" nonce="${nonce}"></script>
   </body>
 </html>
 `;

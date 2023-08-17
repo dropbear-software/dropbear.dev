@@ -16,9 +16,13 @@
         "default": "./lib/index.js"
       }
     },
-    "./firebase-config.js": {
-      "types": "./types/firebase-config.d.ts",
-      "default": "./lib/firebase-config.js"
+    "./services/firebase.js": {
+      "types": "./types/services/firebase.d.ts",
+      "default": "./lib/services/firebase.js"
+    },
+    "./services/csa.js": {
+      "types": "./types/services/csa.d.ts",
+      "default": "./lib/services/csa.js"
     }
   },
   "scripts": {
