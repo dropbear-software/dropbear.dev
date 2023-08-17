@@ -28,9 +28,12 @@
   },
   "dependencies": {
   },
+  "workspaces":[
+    "packages/website-server"
+  ],
   "wireit": {
     "start": {
-      "command": "web-dev-server --app-index index.html --node-resolve --watch --port 8000",
+      "command": "firebase emulators:start",
       "service": true
     }
   }
