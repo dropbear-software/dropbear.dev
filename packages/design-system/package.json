@@ -1,0 +1,106 @@
+{
+  "name": "@dropbear/web-design-system",
+  "version": "0.0.1",
+  "description": "",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "types/index.d.ts",
+  "directories": {
+    "lib": "lib"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./types/index.d.ts",
+        "default": "./lib/index.js"
+      }
+    },
+    "./index.d.ts.map": "./types/index.d.ts.map",
+    "./index.js.map": "./lib/index.js.map",
+    "./design-system.d.ts.map": "./types/design-system.d.ts.map",
+    "./design-system.js.map": "./lib/design-system.js.map",
+    "./design-system.css": "./css/lib/material-theme/index.css",
+    "./css/lib/material-theme/index.css.map": "./css/lib/material-theme/index.css.map"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "wireit",
+    "build:clean": "wireit"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@material/material-color-utilities": "^0.2.7",
+    "lightningcss-cli": "^1.21.5",
+    "lit": "^2.7.6",
+    "typescript": "^5.1.6",
+    "wireit": "^0.10.0",
+    "zx": "^7.2.3"
+  },
+  "peerDependencies": {
+    "lit": "^2.7.6"
+  },
+  "wireit": {
+    "build": {
+      "dependencies": [
+        "compile:typescript"
+      ]
+    },
+    "build:clean": {
+      "command": "npm run build",
+      "env": {
+        "WIREIT_CACHE": "none"
+      }
+    },
+    "compile:typescript": {
+      "command": "tsc --build --pretty",
+      "clean": "if-file-deleted",
+      "files": [
+        "src/**/*.ts",
+        "tsconfig.json"
+      ],
+      "output": [
+        "lib/**",
+        "tsconfig.tsbuildinfo",
+        "types/**"
+      ],
+      "dependencies": [
+        "generate:lit-css"
+      ]
+    },
+    "generate:color-tokens": {
+      "command": "node tool/color-palette-generator.js",
+      "files": [
+        "tool/color-palette-generator.js"
+      ],
+      "output": [
+        "css/src/material-theme/color/color-tokens.css"
+      ]
+    },
+    "compile:css": {
+      "command": "zx tool/compile-css.js",
+      "files": [
+        "css/src/**/*.css"
+      ],
+      "output": [
+        "css/lib/material-theme/index.css"
+      ],
+      "dependencies": [
+        "generate:color-tokens"
+      ]
+    },
+    "generate:lit-css": {
+      "command": "node tool/css-to-litcss.js",
+      "files": [
+        "css/lib/design-system/index.css",
+        "tool/css-to-litcss.js"
+      ],
+      "output": [
+        "src/design-system.css.ts"
+      ],
+      "dependencies": [
+        "compile:css"
+      ]
+    }
+  }
+}

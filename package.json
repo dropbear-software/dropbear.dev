@@ -29,7 +29,8 @@
   "dependencies": {
   },
   "workspaces":[
-    "packages/website-server"
+    "packages/website-server",
+    "packages/design-system"
   ],
   "wireit": {
     "start": {

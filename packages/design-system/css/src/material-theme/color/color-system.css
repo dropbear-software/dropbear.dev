@@ -1,0 +1,92 @@
+@import url(color-tokens.css);
+
+@layer design-system.system-tokens.color {
+  @media (prefers-color-scheme:light) {
+    :root,:host {
+      --md-sys-color-primary:var(--md-ref-color-primary-light);
+      --md-sys-color-primary-container:var(--md-ref-color-primary-container-light);
+      --md-sys-color-on-primary:var(--md-ref-color-on-primary-light);
+      --md-sys-color-on-primary-container:var(--md-ref-color-on-primary-container-light);
+      --md-sys-color-inverse-primary:var(--md-ref-color-inverse-primary-light);
+      --md-sys-color-secondary:var(--md-ref-color-secondary-light);
+      --md-sys-color-secondary-container:var(--md-ref-color-secondary-container-light);
+      --md-sys-color-on-secondary:var(--md-ref-color-on-secondary-light);
+      --md-sys-color-on-secondary-container:var(--md-ref-color-on-secondary-container-light);
+      --md-sys-color-inverse-secondary:var(--md-ref-color-inverse-secondary-light);
+      --md-sys-color-tertiary:var(--md-ref-color-tertiary-light);
+      --md-sys-color-tertiary-container:var(--md-ref-color-tertiary-container-light);
+      --md-sys-color-on-tertiary:var(--md-ref-color-on-tertiary-light);
+      --md-sys-color-on-tertiary-container:var(--md-ref-color-on-tertiary-container-light);
+      --md-sys-color-inverse-tertiary:var(--md-ref-color-inverse-tertiary-light);
+      --md-sys-color-surface:var(--md-ref-color-surface-light);
+      --md-sys-color-surface-dim:var(--md-ref-color-surface-dim-light);
+      --md-sys-color-surface-bright:var(--md-ref-color-surface-bright-light);
+      --md-sys-color-surface-container-lowest:var(--md-ref-color-surface-container-lowest-light);
+      --md-sys-color-surface-container-low:var(--md-ref-color-surface-container-low-light);
+      --md-sys-color-surface-container:var(--md-ref-color-surface-container-light);
+      --md-sys-color-surface-container-high:var(--md-ref-color-surface-container-high-light);
+      --md-sys-color-surface-container-highest:var(--md-ref-color-surface-container-highest-light);
+      --md-sys-color-surface-variant:var(--md-ref-color-surface-variant-light);
+      --md-sys-color-on-surface:var(--md-ref-color-on-surface-light);
+      --md-sys-color-on-surface-variant:var(--md-ref-color-on-surface-variant-light);
+      --md-sys-color-inverse-surface:var(--md-ref-color-inverse-surface-light);
+      --md-sys-color-inverse-on-surface:var(--md-ref-color-inverse-on-surface-light);
+      --md-sys-color-background:var(--md-ref-color-background-light);
+      --md-sys-color-on-background:var(--md-ref-color-on-background-light);
+      --md-sys-color-error:var(--md-ref-color-error-light);
+      --md-sys-color-error-container:var(--md-ref-color-error-container-light);
+      --md-sys-color-on-error:var(--md-ref-color-on-error-light);
+      --md-sys-color-on-error-container:var(--md-ref-color-on-error-container-light);
+      --md-sys-color-inverse-error:var(--md-ref-color-inverse-error-light);
+      --md-sys-color-outline:var(--md-ref-color-outline-dark);
+      --md-sys-color-outline-variant:var(--md-ref-color-outline-variant-dark);
+      --md-sys-color-shadow:var(--md-ref-color-shadow-dark);
+      --md-sys-color-surface-tint:var(--md-ref-color-surface-tint-dark);
+      --md-sys-color-scrim:var(--md-ref-color-scrim-dark);
+    }
+  }
+}
+@media (prefers-color-scheme:dark) {
+  :root,:host {
+    --md-sys-color-primary:var(--md-ref-color-primary-dark);
+    --md-sys-color-primary-container:var(--md-ref-color-primary-container-dark);
+    --md-sys-color-on-primary:var(--md-ref-color-on-primary-dark);
+    --md-sys-color-on-primary-container:var(--md-ref-color-on-primary-container-dark);
+    --md-sys-color-inverse-primary:var(--md-ref-color-inverse-primary-dark);
+    --md-sys-color-secondary:var(--md-ref-color-secondary-dark);
+    --md-sys-color-secondary-container:var(--md-ref-color-secondary-container-dark);
+    --md-sys-color-on-secondary:var(--md-ref-color-on-secondary-dark);
+    --md-sys-color-on-secondary-container:var(--md-ref-color-on-secondary-container-dark);
+    --md-sys-color-inverse-secondary:var(--md-ref-color-inverse-secondary-dark);
+    --md-sys-color-tertiary:var(--md-ref-color-tertiary-dark);
+    --md-sys-color-tertiary-container:var(--md-ref-color-tertiary-container-dark);
+    --md-sys-color-on-tertiary:var(--md-ref-color-on-tertiary-dark);
+    --md-sys-color-on-tertiary-container:var(--md-ref-color-on-tertiary-container-dark);
+    --md-sys-color-inverse-tertiary:var(--md-ref-color-inverse-tertiary-dark);
+    --md-sys-color-surface:var(--md-ref-color-surface-dark);
+    --md-sys-color-surface-dim:var(--md-ref-color-surface-dim-dark);
+    --md-sys-color-surface-bright:var(--md-ref-color-surface-bright-dark);
+    --md-sys-color-surface-container-lowest:var(--md-ref-color-surface-container-lowest-dark);
+    --md-sys-color-surface-container-low:var(--md-ref-color-surface-container-low-dark);
+    --md-sys-color-surface-container:var(--md-ref-color-surface-container-dark);
+    --md-sys-color-surface-container-high:var(--md-ref-color-surface-container-high-dark);
+    --md-sys-color-surface-container-highest:var(--md-ref-color-surface-container-highest-dark);
+    --md-sys-color-surface-variant:var(--md-ref-color-surface-variant-dark);
+    --md-sys-color-on-surface:var(--md-ref-color-on-surface-dark);
+    --md-sys-color-on-surface-variant:var(--md-ref-color-on-surface-variant-dark);
+    --md-sys-color-inverse-surface:var(--md-ref-color-inverse-surface-dark);
+    --md-sys-color-inverse-on-surface:var(--md-ref-color-inverse-on-surface-dark);
+    --md-sys-color-background:var(--md-ref-color-background-dark);
+    --md-sys-color-on-background:var(--md-ref-color-on-background-dark);
+    --md-sys-color-error:var(--md-ref-color-error-dark);
+    --md-sys-color-error-container:var(--md-ref-color-error-container-dark);
+    --md-sys-color-on-error:var(--md-ref-color-on-error-dark);
+    --md-sys-color-on-error-container:var(--md-ref-color-on-error-container-dark);
+    --md-sys-color-inverse-error:var(--md-ref-color-inverse-error-dark);
+    --md-sys-color-outline:var(--md-ref-color-outline-dark);
+    --md-sys-color-outline-variant:var(--md-ref-color-outline-variant-dark);
+    --md-sys-color-shadow:var(--md-ref-color-shadow-dark);
+    --md-sys-color-surface-tint:var(--md-ref-color-surface-tint-dark);
+    --md-sys-color-scrim:var(--md-ref-color-scrim-dark);
+  }
+}
