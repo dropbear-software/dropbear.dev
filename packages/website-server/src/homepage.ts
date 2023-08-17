@@ -2,7 +2,7 @@
 
 export const homepageContent = (nonce: string) => {
   return `<!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
   <head>
     <meta charset="UTF-8">
     <title>Dropbear.dev</title>
@@ -10,6 +10,7 @@ export const homepageContent = (nonce: string) => {
     <meta name="robots" content="noindex">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script nonce="${nonce}">window.dataLayer = [];</script>
+    <style>body { margin: 0; }</style>
   </head>
   <body class="surface on-surface-text">
     <home-page></home-page>
