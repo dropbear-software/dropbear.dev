@@ -1,7 +1,7 @@
 /* eslint max-len: "off" */
 
 export const homepageContent = (nonce: string) => {
-return `<!DOCTYPE html>
+  return `<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -42,4 +42,5 @@ return `<!DOCTYPE html>
     <script type="module" src="/packages/design-system/lib/index.js" nonce="${nonce}"></script>
   </body>
 </html>
-`};
+`;
+};
