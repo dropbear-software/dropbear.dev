@@ -1,0 +1,1 @@
+export const secureDefaultCSP = (nonceValue: string) => `object-src 'none'; script-src 'nonce-${nonceValue}' 'unsafe-inline' 'strict-dynamic' https: http:; base-uri 'none'; font-src fonts.gstatic.com; style-src 'nonce-${nonceValue}' 'self' fonts.googleapis.com; report-uri https://dropbear.dev/services/report-collector/`;
