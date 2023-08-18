@@ -48,7 +48,7 @@ const copyFrontEnd = () => {
     },
     importMaps: {
       inputDirectory: fileURLToPath(new URL("../packages/web-frontend/importmaps", import.meta.url)),
-      outputDirectory: fileURLToPath(new URL("../public/packages/web-frontend/importmaps", import.meta.url))
+      outputDirectory: fileURLToPath(new URL("../packages/website-server/src/generated/importmaps", import.meta.url))
     }
   };
 

@@ -1,33 +1,24 @@
 /* eslint-disable max-len */
 /* eslint-disable require-jsdoc */
+
+import developmentImportMap from "../generated/importmaps/importmap-dev.json" assert { type: "json" };
+// import productionImportMap from "../generated/importmaps/importmap-prod.json" assert { type: "json"};
+
+
 const serviceConfig = {
-  devMode: {
-    host: new URL("http://127.0.0.1:5000"),
-    fileName: "importmap-dev.json",
-  },
-  prodMode: {
-    host: new URL("http://0.0.0.0:8080"),
-    fileName: "importmap-prod.json",
-  },
+  importMap: developmentImportMap,
 };
 
 
 class ImportMapProvider {
-  #assetURL: URL;
-
   #data?: object;
 
-  constructor(assetHost: URL, fileName: string) {
-    this.#assetURL = new URL(`${assetHost}/packages/web-frontend/importmaps/${fileName}`);
+  constructor(rawData: object) {
+    this.#data = rawData;
   }
 
   async initialize() {
-    const resourceRequest = await fetch(this.#assetURL);
-    if (resourceRequest.ok) {
-      this.#data = await resourceRequest.json() as object;
-    } else {
-      throw new Error("Unable to fetch the importmap.json file");
-    }
+    return true;
   }
 
   get data() {
@@ -60,4 +51,4 @@ class ImportMapProvider {
   }
 }
 
-export const importMapService = new ImportMapProvider(serviceConfig.devMode.host, serviceConfig.devMode.fileName);
+export const importMapService = new ImportMapProvider(serviceConfig.importMap);
