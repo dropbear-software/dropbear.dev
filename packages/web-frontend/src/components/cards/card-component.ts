@@ -3,7 +3,6 @@ import { BaseElement } from "../base-element/base-element.js";
 import { componentStyles } from "./lib/styles.css.js";
 import { customElement, property } from "lit/decorators.js";
 import { ClassInfo, classMap } from 'lit/directives/class-map.js';
-import "@material/web/elevation/elevation.js";
 import "@material/web/ripple/ripple.js";
 
 @customElement('card-component')
