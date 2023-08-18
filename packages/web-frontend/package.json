@@ -27,6 +27,10 @@
     "./pages/contact-page.js": {
       "types": "./types/pages/home/homepage.d.ts",
       "default": "./lib/pages/home/homepage.js"
+    },
+    "./importmap.json": {
+      "default": "./importmaps/importmap-prod.json",
+      "development": "./importmaps/importmap-dev.json"
     }
   },
   "scripts": {
@@ -37,14 +41,16 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "jspm": "^3.0.2",
     "typescript": "^5.1.6",
-    "wireit": "^0.10.0"
+    "wireit": "^0.10.0",
+    "zx": "^7.2.3"
   },
   "wireit": {
     "build": {
       "dependencies": [
         "../design-system:build",
-        "compile:typescript"
+        "build:importmaps"
       ]
     },
     "build:clean": {
@@ -52,6 +58,18 @@
       "env": {
         "WIREIT_CACHE": "none"
       }
+    },
+    "build:importmaps":{
+      "command": "zx tool/generate_importmaps.js",
+      "files": [
+        "lib/**/*.js"
+      ],
+      "output": [
+        "importmaps/*.json"
+      ],
+      "dependencies": [
+        "compile:typescript"
+      ]
     },
     "compile:typescript": {
       "command": "tsc --build --pretty",
@@ -61,7 +79,7 @@
         "tsconfig.json"
       ],
       "output": [
-        "lib/**",
+        "lib/**/*.{js,js.map,json}",
         "tsconfig.tsbuildinfo",
         "types/**"
       ]

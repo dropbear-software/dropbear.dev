@@ -45,10 +45,15 @@ const copyFrontEnd = () => {
     js: {
       inputDirectory: fileURLToPath(new URL("../packages/web-frontend/lib", import.meta.url)),
       outputDirectory: fileURLToPath(new URL("../public/packages/web-frontend/lib", import.meta.url))
+    },
+    importMaps: {
+      inputDirectory: fileURLToPath(new URL("../packages/web-frontend/importmaps", import.meta.url)),
+      outputDirectory: fileURLToPath(new URL("../public/packages/web-frontend/importmaps", import.meta.url))
     }
   };
 
   fs.copySync(frontEndModule.js.inputDirectory, frontEndModule.js.outputDirectory);
+  fs.copySync(frontEndModule.importMaps.inputDirectory, frontEndModule.importMaps.outputDirectory);
 };
 
 copyDesignSystem();

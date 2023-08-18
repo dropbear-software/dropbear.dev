@@ -13,10 +13,13 @@ import express from "express";
 import {contactPageReqHandler} from "./controllers/contact-page.js";
 import {cspReportingEndpoint} from "./controllers/csp-endpoint.js";
 import {homePageReqHandler} from "./controllers/home-page.js";
+import {importMapService} from "./services/import-map-provider.js";
 
 const app = express();
 app.get("/", (request, response) => homePageReqHandler(request, response));
 app.get("/contact-us/", (request, response) => contactPageReqHandler(request, response));
 app.post("/services/report-collector/", async (request, response) => await cspReportingEndpoint(request, response));
+
+await importMapService.initialize();
 
 export const helloWorld = onRequest(app);
