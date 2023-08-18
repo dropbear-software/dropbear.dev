@@ -21,7 +21,7 @@ export async function cspReportingEndpoint(request:Request, response: Response) 
     response
       .status(400)
       .send(
-        new Error("Content-Type not supported. The Content-Type must be application/csp-report.")
+        new Error("Content-Type not supported. The Content-Type must be application/csp-report."),
       );
   }
 }
