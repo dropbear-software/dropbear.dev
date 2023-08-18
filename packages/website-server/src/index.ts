@@ -20,7 +20,6 @@ const app = express();
 
 app.get("/", (request, response) => {
   const nonceValue = generateNonce();
-  logger.info("Serving Home Page", {structuredData: true});
   response.set("Content-Security-Policy", secureDefaultCSP(nonceValue));
 
   response.send(homepageContent(nonceValue));
@@ -28,7 +27,6 @@ app.get("/", (request, response) => {
 
 app.post("/services/report-collector/", async (request, response) => {
   const correctContentType = request.get("Content-Type") === "application/csp-report";
-  console.log(request.get("Content-Type"));
 
   if (correctContentType) {
     // handle Reporting API reports, which are sent in an array of reports
