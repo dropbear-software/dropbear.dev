@@ -55,7 +55,7 @@ export const contactPageContent = (nonce: string) => {
     
     <!-- ES Module Shims: Import maps polyfill for older browsers without import maps support (eg Safari 16.3) -->
     <script nonce="${nonce}">
-      window.esmsInitOptions = { polyfillEnable: ['css-modules', 'json-modules'] }
+      window.esmsInitOptions = { polyfillEnable: ['css-modules', 'json-modules'] };
     </script>
     <script async src="https://ga.jspm.io/npm:es-module-shims@1.8.0/dist/es-module-shims.js" crossorigin="anonymous" nonce="${nonce}"></script>
     <script type="module" src="/packages/web-frontend/lib/pages/contact/contact-page.js" nonce="${nonce}"></script>

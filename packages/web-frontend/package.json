@@ -23,6 +23,10 @@
     "./services/csa.js": {
       "types": "./types/services/csa.d.ts",
       "default": "./lib/services/csa.js"
+    },
+    "./pages/contact-page.js": {
+      "types": "./types/pages/home/homepage.d.ts",
+      "default": "./lib/pages/home/homepage.js"
     }
   },
   "scripts": {
