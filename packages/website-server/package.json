@@ -3,8 +3,8 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "lint": "eslint --ext .js,.ts .",
-    "lint:fix": "eslint --fix --ext .js,.ts .",
+    "lint": "eslint --ext .js,.ts src/ --parser-options={tsconfigRootDir:null}",
+    "lint:fix": "eslint --fix --ext .js,.ts src/ --parser-options={tsconfigRootDir:null}",
     "build": "wireit",
     "build:watch": "tsc --watch",
     "serve": "wireit",
