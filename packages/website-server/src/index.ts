@@ -20,7 +20,7 @@ const app = express();
 app.get("/", (request, response) => homePageReqHandler(request, response));
 app.get("/contact-us/", (request, response) => contactPageReqHandler(request, response));
 app.post("/services/report-collector/", async (request, response) => await cspReportingEndpoint(request, response));
-app.get("/admin", (request, response) => monitoredReqHandler(request, response));
+app.get("/admin/", (request, response) => monitoredReqHandler(request, response));
 
 await importMapService.initialize();
 
