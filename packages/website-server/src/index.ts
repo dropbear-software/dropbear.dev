@@ -14,6 +14,7 @@ import {contactPageReqHandler} from "./controllers/contact-page.js";
 import {cspReportingEndpoint} from "./controllers/csp-endpoint.js";
 import {homePageReqHandler} from "./controllers/home-page.js";
 import {importMapService} from "./services/import-map-provider.js";
+import {monitoredReqHandler} from "./controllers/monitored-request-handler.js";
 
 const app = express();
 app.get("/", (request, response) => homePageReqHandler(request, response));
