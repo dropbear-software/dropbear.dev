@@ -25,6 +25,7 @@ export function monitoredReqHandler(request:Request, response: Response) {
       ip_address: request.ip,
       country: request.get("X-Appengine-Country"),
       user_agent: request.get("user-agent"),
+      ip_chain: request.get("X-Forwarded-For"),
     },
   };
 
