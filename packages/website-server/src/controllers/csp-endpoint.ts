@@ -14,7 +14,7 @@ export async function cspReportingEndpoint(request:Request, response: Response) 
   if (correctContentType) {
     // handle Reporting API reports, which are sent in an array of reports
     const data = request.body;
-    const newReports: Array<{ age: number; }> = await JSON.parse(data);
+    const newReports: Array<object> = await JSON.parse(data);
     logger.warn("Processing CSP Report", newReports);
     response.status(200).send("OK");
   } else {
