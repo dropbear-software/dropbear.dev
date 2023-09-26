@@ -68,6 +68,11 @@ export const heroStyles = css`
     --md-outlined-button-container-shape: 10px;
     display: flex;
     gap: 1rem;
+    margin-block-end: 1rem;
+  }
+
+  [data-section="cta"] a {
+    text-decoration: none;
   }
 
   [data-component="hero-section"] [data-section="image"]{

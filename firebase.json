@@ -24,6 +24,20 @@
     ],
     "rewrites": [
       {
+        "source": "/services/sstm/**",
+        "run": {
+          "serviceId": "server-side-tagging",
+          "region": "europe-west1"
+        }
+      },
+      {
+        "source": "/services/sstm-preview/**",
+        "run": {
+          "serviceId": "server-side-tagging-preview",
+          "region": "europe-west1"
+        }
+      },
+      {
         "source": "**",
         "function": "helloWorld",
         "region": "us-central1"

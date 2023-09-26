@@ -1,4 +1,4 @@
-import { customElement } from "lit/decorators.js";
+import { customElement, queryAll } from "lit/decorators.js";
 import { CSSResult, TemplateResult, html } from "lit";
 import { PageMetadata } from "../../components/web-page/lib/types.js";
 import { WebPage } from "../../components/web-page/web-page.js";
@@ -21,6 +21,19 @@ export class HomePage extends WebPage {
   }
 
   static styles: CSSResult[] = [...WebPage.styles, heroStyles ];
+
+  @queryAll('[data-section="cta"] a')
+  ctaLinks!: NodeListOf<HTMLElement>
+
+  override firstUpdated(): void {
+    this.ctaLinks.forEach(element => {
+      element.addEventListener('click', () => {
+        window.dataLayer?.push({
+          event: 'click_to_contact'
+        });
+      });
+    });
+  }
 
   protected override render(): TemplateResult {
     return html`
