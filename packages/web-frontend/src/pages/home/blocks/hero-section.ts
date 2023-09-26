@@ -2,33 +2,49 @@ import { css, html } from "lit";
 import { onlineStatsIllustration } from "../../../svg/hero-images.js";
 import "@material/web/button/outlined-button.js";
 import "@material/web/button/filled-button.js";
+import { avatarData } from "../../../svg/avatar.js";
 
 export const heroSection = html`
 <header data-component="hero-section">
   <div data-section="text">
     <h1 class="primary-text">
-      <strong>Increase Website Conversions with Our Data-Driven Approach</strong>
+      <strong>Grow Your Business with Digital Marketing Strategies That Work</strong>
     </h1>
+    <h3 class="tertiary-text">
+      I'm Mark, a senior consultant with 15 years of experience helping businesses of all sizes achieve their digital marketing goals.
+    </h3>
     <div class="title-large">
       <p>
-        Are you looking to increase website conversions? If so, you need to use a data-driven approach.
-        At Dropbear Software, we use data to identify and fix the problems that are preventing your website from generating leads and sales.
+        Do you want to reach more customers, generate more leads, and increase your sales? Digital marketing is the key, 
+        but it can be complex and time-consuming to manage on your own. That's where I come in.
       </p>
       <p>
-        Our team of experienced marketing and development consultants has helped businesses of all shapes and sizes achieve their online goals.
-        We know what it takes to create a successful website that converts visitors into customers.
+        As a senior digital marketing consultant, I have the experience and expertise to help you develop and implement a digital 
+        marketing strategy that works for your business. I specialize in SEO, web analytics, A/B testing, personalization, 
+        and more. I also have been building websites of all shapes and sizes since 1997 which means I also have a deep technical background, 
+        so I can understand the limitations of what is possible and know how to implement the solutions and strategies I suggest.
       </p>
       <p>
-        If you're ready to increase your website conversions, contact us today for a free consultation.
+        I have a proven track record of success, helping clients across all kinds of industries achieve their digital marketing goals. 
+        I pride myself on my ability to work closely with my clients to find the right solutions for their particular set of circumstances.
+      </p>
+
+      <p>
+        <strong>
+          Over the past 18 months alone, I have helped my clients generate several million dollars in additional revenue as a direct result of my work. I am confident that I can help you achieve similar results.
+        </strong>
+      </p>
+      <p>
+        Please don't hesitate to contact me today for a free consultation.
       </p>
     </div>
     <div data-section="cta">
-      <a href="#"><md-filled-button>Primary CTA</md-filled-button></a>
-      <a href="/contact-us/"><md-outlined-button>Secondary CTA</md-outlined-button></a>
+      <a href="mailto:mark@dropbear.dev"><md-filled-button>Send Me An Email</md-filled-button></a>
+      <a href="tel:+351913957329"><md-outlined-button>Give Me A Call</md-outlined-button></a>
     </div>
   </div>
   <div data-section="image" class="tertiary-text">
-    ${onlineStatsIllustration}
+    <img src="${avatarData}" alt="Mark">
   </div>
 </header>
 `;
@@ -62,6 +78,11 @@ export const heroStyles = css`
     [data-component="hero-section"] [data-section="image"]{
       display: flex;
       align-items: center;
+      min-width: 30vw;
+    }
+
+    [data-component="hero-section"] img {
+      width: 100%;
     }
   }
 

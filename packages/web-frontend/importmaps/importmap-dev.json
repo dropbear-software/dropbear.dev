@@ -2,19 +2,19 @@
   "imports": {
     "@dropbear/web-design-system": "./packages/design-system/lib/index.js",
     "@dropbear/web-frontend": "./packages/web-frontend/lib/index.js",
-    "firebase/analytics": "https://ga.jspm.io/npm:firebase@10.1.0/analytics/dist/esm/index.esm.js",
-    "firebase/app": "https://ga.jspm.io/npm:firebase@10.1.0/app/dist/esm/index.esm.js"
+    "firebase/analytics": "https://ga.jspm.io/npm:firebase@10.4.0/analytics/dist/esm/index.esm.js",
+    "firebase/app": "https://ga.jspm.io/npm:firebase@10.4.0/app/dist/esm/index.esm.js"
   },
   "scopes": {
     "./packages/": {
-      "@material/web/button/": "https://ga.jspm.io/npm:@material/web@1.0.0-pre.15/button/",
+      "@material/web/button/": "https://ga.jspm.io/npm:@material/web@1.0.0-pre.17/button/",
       "lit": "https://ga.jspm.io/npm:lit@2.8.0/index.js",
       "lit/decorators.js": "https://ga.jspm.io/npm:lit@2.8.0/decorators.js",
-      "tslib": "https://ga.jspm.io/npm:tslib@2.6.1/tslib.es6.mjs"
+      "tslib": "https://ga.jspm.io/npm:tslib@2.6.2/tslib.es6.mjs"
     },
     "https://ga.jspm.io/": {
       "@firebase/analytics": "https://ga.jspm.io/npm:@firebase/analytics@0.10.0/dist/esm/index.esm2017.js",
-      "@firebase/app": "https://ga.jspm.io/npm:@firebase/app@0.9.15/dist/esm/index.esm2017.js",
+      "@firebase/app": "https://ga.jspm.io/npm:@firebase/app@0.9.19/dist/esm/index.esm2017.js",
       "@firebase/component": "https://ga.jspm.io/npm:@firebase/component@0.6.4/dist/esm/index.esm2017.js",
       "@firebase/installations": "https://ga.jspm.io/npm:@firebase/installations@0.6.4/dist/esm/index.esm2017.js",
       "@firebase/logger": "https://ga.jspm.io/npm:@firebase/logger@0.4.0/dist/esm/index.esm2017.js",
@@ -27,7 +27,7 @@
       "lit-html": "https://ga.jspm.io/npm:lit-html@2.8.0/development/lit-html.js",
       "lit-html/": "https://ga.jspm.io/npm:lit-html@2.8.0/development/",
       "lit/": "https://ga.jspm.io/npm:lit@2.8.0/",
-      "tslib": "https://ga.jspm.io/npm:tslib@2.6.1/tslib.es6.mjs"
+      "tslib": "https://ga.jspm.io/npm:tslib@2.6.2/tslib.es6.mjs"
     },
     "https://ga.jspm.io/npm:@firebase/installations@0.6.4/": {
       "idb": "https://ga.jspm.io/npm:idb@7.0.1/build/index.js"

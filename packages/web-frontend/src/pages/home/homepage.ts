@@ -24,10 +24,6 @@ export class HomePage extends WebPage {
 
   protected override render(): TemplateResult {
     return html`
-      <main-navigation>
-        <main-navigation-link text="Home" href="/"></main-navigation-link>
-        <main-navigation-link text="Contact" href="/contact-us/"></main-navigation-link>
-      </main-navigation>
       ${heroSection}
     `;
   }
