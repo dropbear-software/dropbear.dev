@@ -3,6 +3,7 @@
     "esbenp.prettier-vscode",
     "runem.lit-plugin",
     "dbaeumer.vscode-eslint",
-    "google.wireit"
+    "google.wireit",
+    "dart-code.dart-code"
   ]
 }
