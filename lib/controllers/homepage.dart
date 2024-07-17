@@ -6,7 +6,7 @@ import 'package:shelf/shelf.dart';
 
 import 'route_controller.dart';
 
-class HomeController extends RouteController {
+final class HomeController extends RouteController {
   @override
   FutureOr<Response> onRequest(Request request, RequestLogger logger) async {
     logger.info('Handling home route');
