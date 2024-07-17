@@ -1,5 +1,6 @@
-import 'package:functions_framework/functions_framework.dart';
 import 'package:shelf/shelf.dart';
+
+import 'misc.dart';
 
 // Middleware 1: Adds a timestamp to the context
 Handler middlewareOne(Handler innerHandler) {
@@ -20,8 +21,4 @@ Handler middlewareTwo(Handler innerHandler) {
     getLoggerFromContext(request).info('Request received at: $timestamp');
     return innerHandler(request);
   };
-}
-
-RequestLogger getLoggerFromContext(Request request) {
-  return request.context['logger'] as RequestLogger;
 }
