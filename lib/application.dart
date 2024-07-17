@@ -14,20 +14,16 @@ class Application {
   // Add a way to set the logger (constructor or setter)
   RequestLogger logger;
 
-  late final HomeController _homeController;
-
   Handler get handler => const Pipeline()
-      .addMiddleware(logRequests()) // Built-in Shelf logging middleware
       .addMiddleware(_injectLogger) // Custom middleware to inject RequestLogger
       .addMiddleware(middlewareOne)
       .addMiddleware(middlewareTwo)
       // ... add more middleware as needed
-      .addHandler(_router);
+      .addHandler(_router.call);
 
   Application({required this.logger}) {
-    _homeController = HomeController(logger: logger);
     // Define your routes here
-    _router.get('/', _homeController.handleRequest);
+    _router.get('/', HomeController().handleRequest);
     _router.get('/users/<userId>', _userHandler);
     // ... add more routes
   }
@@ -42,7 +38,6 @@ class Application {
   // Middleware to inject RequestLogger into the request context
   Handler _injectLogger(Handler innerHandler) {
     return (Request request) {
-      // Assuming you receive RequestLogger in your Cloud Function
       return innerHandler(request.change(context: {
         ...request.context,
         'logger': logger,

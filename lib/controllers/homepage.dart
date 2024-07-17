@@ -1,11 +1,14 @@
+// Example subclass (route controller)
+import 'dart:async';
+
 import 'package:functions_framework/functions_framework.dart';
 import 'package:shelf/shelf.dart';
 
-class HomeController {
-  final RequestLogger logger;
-  HomeController({required this.logger});
+import 'route_controller.dart';
 
-  Response handleRequest(Request request) {
+class HomeController extends RouteController {
+  @override
+  FutureOr<Response> onRequest(Request request, RequestLogger logger) async {
     logger.info('Handling home route');
     return Response.ok('Hello from home!');
   }
