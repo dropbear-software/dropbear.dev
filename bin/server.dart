@@ -13,7 +13,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import '../lib/functions.dart' as function_library;
+import 'package:dropbear/functions.dart' as function_library;
 import 'package:functions_framework/serve.dart';
 
 Future<void> main(List<String> args) async {
@@ -21,7 +21,7 @@ Future<void> main(List<String> args) async {
 }
 
 FunctionTarget? _nameToFunctionTarget(String name) => switch (name) {
-      'function' => FunctionTarget.http(
+      'function' => FunctionTarget.httpWithLogger(
           function_library.function,
         ),
       _ => null

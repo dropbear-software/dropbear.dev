@@ -1,5 +1,11 @@
+import 'dart:async';
+
+import 'package:dropbear/application.dart';
 import 'package:functions_framework/functions_framework.dart';
 import 'package:shelf/shelf.dart';
 
 @CloudFunction()
-Response function(Request request) => Response.ok('Hello, World!');
+FutureOr<Response> function(Request request, RequestLogger logger) async {
+  final app = Application(logger: logger);
+  return app.handler(request);
+}
