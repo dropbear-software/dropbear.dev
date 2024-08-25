@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "Development server",
+        "program": "${workspaceFolder}\\www/node_modules/.bin/astro",
+        "args": ["dev"]
+      }
+    ]
+  }

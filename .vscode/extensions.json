@@ -2,8 +2,6 @@
   "recommendations": [
     "esbenp.prettier-vscode",
     "runem.lit-plugin",
-    "dbaeumer.vscode-eslint",
-    "google.wireit",
-    "dart-code.dart-code"
+    "astro-build.astro-vscode"
   ]
 }
