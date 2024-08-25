@@ -1,5 +1,6 @@
 ---
-
+const currentDateTime = new Date(Date.now()).toISOString();
+const pageGenerator = Astro.generator.replace('Astro', 'Belvin').trim();
 ---
 
 <html lang="en">
@@ -7,10 +8,16 @@
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
+		<meta name="generator" content={pageGenerator} />
 		<title>Astro</title>
 	</head>
 	<body>
 		<h1>Astro</h1>
+		<simple-greeting name="Old Matey"></simple-greeting>
+		<time>{currentDateTime}</time>
 	</body>
 </html>
+
+<script>
+	 import '../components/simple-greeting.js';
+</script>
