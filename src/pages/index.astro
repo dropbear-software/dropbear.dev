@@ -1,23 +1,50 @@
 ---
 const currentDateTime = new Date(Date.now()).toISOString();
 const pageGenerator = Astro.generator.replace('Astro', 'Dropbear').trim();
+import '../styles/index.css';
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={pageGenerator} />
-		<title>Astro</title>
+		<meta name="served-at" content={currentDateTime} />
+		<title>Dropbear: Software & Consulting</title>
+		<style>
+			body {
+				min-height: 100dvh;
+				display: grid;
+				place-items: center;
+			}
+
+			main {
+				padding: 4rem 5rem;
+				text-align: center;
+				border-radius: 5px;
+			}
+
+			.display-large {
+				font-weight: 700;
+			}
+		</style>
 	</head>
 	<body>
-		<h1>Astro</h1>
-		<simple-greeting name="Old Matey"></simple-greeting>
-		<time>{currentDateTime}</time>
+		<dropbear-page>
+			<main class="secondary-container outline">
+				<h1>
+					<span class="display-large">Dropbear</span><br>
+					<span class="display-small">Software & Consulting</span>
+				</h1>
+			</main>
+		</dropbear-page>
 	</body>
 </html>
 
 <script>
-	 import '../components/simple-greeting.js';
+	 import '../components/dropbear-page.js';
 </script>

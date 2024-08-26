@@ -1,0 +1,48 @@
+@layer theme {
+  :root {
+    /* Body small */
+    --md-sys-typescale-body-small-font: var(--md-ref-typeface-plain);
+    --md-sys-typescale-body-small-size: calc(12/16 * 1rem);
+    --md-sys-typescale-body-small-weight: var(--md-ref-typeface-weight-regular);
+    --md-sys-typescale-body-small-line-height: calc(16/16 * 1rem);
+    --md-sys-typescale-body-small-tracking: 0.4px;
+
+    /* Body medium */
+    --md-sys-typescale-body-medium-font: var(--md-ref-typeface-plain);
+    --md-sys-typescale-body-medium-size: calc(14/16 * 1rem);
+    --md-sys-typescale-body-medium-weight: var(--md-ref-typeface-weight-regular);
+    --md-sys-typescale-body-medium-line-height: calc(20/16 * 1rem);
+    --md-sys-typescale-body-medium-tracking: 0.25px;
+
+    /* Body large */
+    --md-sys-typescale-body-large-font: var(--md-ref-typeface-plain);
+    --md-sys-typescale-body-large-size: calc(16/16 * 1rem);
+    --md-sys-typescale-body-large-weight: var(--md-ref-typeface-weight-regular);
+    --md-sys-typescale-body-large-line-height: calc(24/16 * 1rem);
+    --md-sys-typescale-body-large-tracking: 0.5px;
+  }
+
+  .body-small {
+    font-family: var(--md-sys-typescale-body-small-font);
+    font-weight: var(--md-sys-typescale-body-small-weight);
+    font-size: var(--md-sys-typescale-body-small-size);
+    line-height: var(--md-sys-typescale-body-small-line-height);
+    letter-spacing: var(--md-sys-typescale-body-small-tracking);
+  }
+
+  .body-medium {
+    font-family: var(--md-sys-typescale-body-medium-font);
+    font-weight: var(--md-sys-typescale-body-medium-weight);
+    font-size: var(--md-sys-typescale-body-medium-size);
+    line-height: var(--md-sys-typescale-body-medium-line-height);
+    letter-spacing: var(--md-sys-typescale-body-medium-tracking);
+  }
+
+  .body-large, body {
+    font-family: var(--md-sys-typescale-body-large-font);
+    font-weight: var(--md-sys-typescale-body-large-weight);
+    font-size: var(--md-sys-typescale-body-large-size);
+    line-height: var(--md-sys-typescale-body-large-line-height);
+    letter-spacing: var(--md-sys-typescale-body-large-tracking);
+  }
+}

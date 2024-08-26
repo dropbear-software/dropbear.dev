@@ -1,0 +1,66 @@
+@layer theme {
+  :root {
+    /* Label small */
+    --md-sys-typescale-label-small-font: var(--md-ref-typeface-plain);
+    --md-sys-typescale-label-small-size: calc(11/16 * 1rem);
+    --md-sys-typescale-label-small-weight: var(--md-ref-typeface-weight-medium);
+    --md-sys-typescale-label-small-line-height: calc(16/16 * 1rem);
+    --md-sys-typescale-label-small-tracking: 0.5px;
+
+    /* Label medium */
+    --md-sys-typescale-label-medium-font: var(--md-ref-typeface-plain);
+    --md-sys-typescale-label-medium-size: calc(12/16 * 1rem);
+    --md-sys-typescale-label-medium-weight: var(--md-ref-typeface-weight-medium);
+    --md-sys-typescale-label-medium-weight-prominent: var(--md-ref-typeface-weight-bold);
+    --md-sys-typescale-label-medium-line-height: calc(16/16 * 1rem);
+    --md-sys-typescale-label-medium-tracking: 0.5px;
+
+    /* Label large */
+    --md-sys-typescale-label-large-font: var(--md-ref-typeface-plain);
+    --md-sys-typescale-label-large-size: calc(14/16 * 1rem);
+    --md-sys-typescale-label-large-weight: var(--md-ref-typeface-weight-medium);
+    --md-sys-typescale-label-large-weight-prominent: var(--md-ref-typeface-weight-bold);
+    --md-sys-typescale-label-large-line-height: calc(20/16 * 1rem);
+    --md-sys-typescale-label-large-tracking: 0.1px;
+  }
+
+  .label-small {
+    font-family: var(--md-sys-typescale-label-small-font);
+    font-weight: var(--md-sys-typescale-label-small-weight);
+    font-size: var(--md-sys-typescale-label-small-size);
+    line-height: var(--md-sys-typescale-label-small-line-height);
+    letter-spacing: var(--md-sys-typescale-label-small-tracking);
+  }
+
+  .label-medium {
+    font-family: var(--md-sys-typescale-label-medium-font);
+    font-weight: var(--md-sys-typescale-label-medium-weight);
+    font-size: var(--md-sys-typescale-label-medium-size);
+    line-height: var(--md-sys-typescale-label-medium-line-height);
+    letter-spacing: var(--md-sys-typescale-label-medium-tracking);
+  }
+
+  .label-medium-prominent {
+    font-family: var(--md-sys-typescale-label-medium-font);
+    font-weight: var(--md-sys-typescale-label-medium-weight-prominent);
+    font-size: var(--md-sys-typescale-label-medium-size);
+    line-height: var(--md-sys-typescale-label-medium-line-height);
+    letter-spacing: var(--md-sys-typescale-label-medium-tracking);
+  }
+
+  .label-large, label {
+    font-family: var(--md-sys-typescale-label-large-font);
+    font-weight: var(--md-sys-typescale-label-large-weight);
+    font-size: var(--md-sys-typescale-label-large-size);
+    line-height: var(--md-sys-typescale-label-large-line-height);
+    letter-spacing: var(--md-sys-typescale-label-large-tracking);
+  }
+
+  .label-large-prominent {
+    font-family: var(--md-sys-typescale-label-large-font);
+    font-weight: var(--md-sys-typescale-label-large-weight-prominent);
+    font-size: var(--md-sys-typescale-label-large-size);
+    line-height: var(--md-sys-typescale-label-large-line-height);
+    letter-spacing: var(--md-sys-typescale-label-large-tracking);
+  }
+}

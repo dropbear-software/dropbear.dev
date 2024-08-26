@@ -1,0 +1,48 @@
+@layer theme {
+  :root {
+    /* Title small */
+    --md-sys-typescale-title-small-font: var(--md-ref-typeface-plain);
+    --md-sys-typescale-title-small-size: calc(14/16 * 1rem);
+    --md-sys-typescale-title-small-weight: var(--md-ref-typeface-weight-medium);
+    --md-sys-typescale-title-small-line-height: calc(20/16 * 1rem);
+    --md-sys-typescale-title-small-tracking: 0.1px;
+
+    /* Title medium */
+    --md-sys-typescale-title-medium-font: var(--md-ref-typeface-plain);
+    --md-sys-typescale-title-medium-size: calc(16/16 * 1rem);
+    --md-sys-typescale-title-medium-weight: var(--md-ref-typeface-weight-medium);
+    --md-sys-typescale-title-medium-line-height: calc(24/16 * 1rem);
+    --md-sys-typescale-title-medium-tracking: 0.15px;
+
+    /* Title large */
+    --md-sys-typescale-title-large-font: var(--md-ref-typeface-brand);
+    --md-sys-typescale-title-large-size: calc(22/16 * 1rem);
+    --md-sys-typescale-title-large-weight: var(--md-ref-typeface-weight-regular);
+    --md-sys-typescale-title-large-line-height: calc(28/16 * 1rem);
+    --md-sys-typescale-title-large-tracking: 0px;
+  }
+
+  .title-small, h6 {
+    font-family: var(--md-sys-typescale-title-small-font);
+    font-weight: var(--md-sys-typescale-title-small-weight);
+    font-size: var(--md-sys-typescale-title-small-size);
+    line-height: var(--md-sys-typescale-title-small-line-height);
+    letter-spacing: var(--md-sys-typescale-title-small-tracking);
+  }
+
+  .title-medium, h5 {
+    font-family: var(--md-sys-typescale-title-medium-font);
+    font-weight: var(--md-sys-typescale-title-medium-weight);
+    font-size: var(--md-sys-typescale-title-medium-size);
+    line-height: var(--md-sys-typescale-title-medium-line-height);
+    letter-spacing: var(--md-sys-typescale-title-medium-tracking);
+  }
+
+  .title-large, h4 {
+    font-family: var(--md-sys-typescale-title-large-font);
+    font-weight: var(--md-sys-typescale-title-large-weight);
+    font-size: var(--md-sys-typescale-title-large-size);
+    line-height: var(--md-sys-typescale-title-large-line-height);
+    letter-spacing: var(--md-sys-typescale-title-large-tracking);
+  }
+}

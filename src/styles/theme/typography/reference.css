@@ -1,0 +1,11 @@
+@import url(./body.css);
+
+@layer theme {
+  :root {
+    --md-ref-typeface-brand: "Roboto Flex", system-ui, sans-serif;
+    --md-ref-typeface-plain: "Roboto Flex", system-ui, sans-serif;
+    --md-ref-typeface-weight-regular: 400;
+    --md-ref-typeface-weight-medium: 500;
+    --md-ref-typeface-weight-bold: 700;
+  }
+}
