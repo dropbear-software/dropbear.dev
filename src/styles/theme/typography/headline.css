@@ -21,28 +21,4 @@
     --md-sys-typescale-headline-large-line-height: calc(40/16 * 1rem);
     --md-sys-typescale-headline-large-tracking: 0px;
   }
-
-  .headline-small, h3 {
-    font-family: var(--md-sys-typescale-headline-small-font);
-    font-weight: var(--md-sys-typescale-headline-small-weight);
-    font-size: var(--md-sys-typescale-headline-small-size);
-    line-height: var(--md-sys-typescale-headline-small-line-height);
-    letter-spacing: var(--md-sys-typescale-headline-small-tracking);
-  }
-
-  .headline-medium, h2 {
-    font-family: var(--md-sys-typescale-headline-medium-font);
-    font-weight: var(--md-sys-typescale-headline-medium-weight);
-    font-size: var(--md-sys-typescale-headline-medium-size);
-    line-height: var(--md-sys-typescale-headline-medium-line-height);
-    letter-spacing: var(--md-sys-typescale-headline-medium-tracking);
-  }
-
-  .headline-large, h1 {
-    font-family: var(--md-sys-typescale-headline-large-font);
-    font-weight: var(--md-sys-typescale-headline-large-weight);
-    font-size: var(--md-sys-typescale-headline-large-size);
-    line-height: var(--md-sys-typescale-headline-large-line-height);
-    letter-spacing: var(--md-sys-typescale-headline-large-tracking);
-  }
 }

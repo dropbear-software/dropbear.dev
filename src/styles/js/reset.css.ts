@@ -1,3 +1,6 @@
+import { css } from "lit";
+
+export const resetStyles = css`
 @layer reset {
   /* Box sizing rules */
   *,
@@ -7,9 +10,6 @@
   }
 
   /* Set core body defaults */
-  body {
-    min-height: 100dvh;
-  }
 
   h1, h2, h3, h4, h5, h6 {
     text-wrap: balance;
@@ -39,3 +39,4 @@
     text-size-adjust: none;
   }
 }
+`;

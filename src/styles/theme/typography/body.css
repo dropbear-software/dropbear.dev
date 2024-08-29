@@ -21,28 +21,4 @@
     --md-sys-typescale-body-large-line-height: calc(24/16 * 1rem);
     --md-sys-typescale-body-large-tracking: 0.5px;
   }
-
-  .body-small {
-    font-family: var(--md-sys-typescale-body-small-font);
-    font-weight: var(--md-sys-typescale-body-small-weight);
-    font-size: var(--md-sys-typescale-body-small-size);
-    line-height: var(--md-sys-typescale-body-small-line-height);
-    letter-spacing: var(--md-sys-typescale-body-small-tracking);
-  }
-
-  .body-medium {
-    font-family: var(--md-sys-typescale-body-medium-font);
-    font-weight: var(--md-sys-typescale-body-medium-weight);
-    font-size: var(--md-sys-typescale-body-medium-size);
-    line-height: var(--md-sys-typescale-body-medium-line-height);
-    letter-spacing: var(--md-sys-typescale-body-medium-tracking);
-  }
-
-  .body-large, body {
-    font-family: var(--md-sys-typescale-body-large-font);
-    font-weight: var(--md-sys-typescale-body-large-weight);
-    font-size: var(--md-sys-typescale-body-large-size);
-    line-height: var(--md-sys-typescale-body-large-line-height);
-    letter-spacing: var(--md-sys-typescale-body-large-tracking);
-  }
 }

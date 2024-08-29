@@ -13,9 +13,19 @@
     "@astrojs/check": "^0.9.3",
     "@astrojs/lit": "^4.3.0",
     "@astrojs/node": "^8.3.3",
+    "@material/web": "^2.1.0",
     "@webcomponents/template-shadowroot": "^0.2.1",
     "astro": "^4.14.5",
     "lit": "^3.2.0",
     "typescript": "^5.5.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dropbear-software/dropbear.dev.git"
+  },
+  "author": "Mark Hoad",
+  "bugs": {
+    "url": "https://github.com/dropbear-software/dropbear.dev/issues"
+  },
+  "homepage": "https://github.com/dropbear-software/dropbear.dev#readme"
 }
