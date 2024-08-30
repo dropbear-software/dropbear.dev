@@ -9,7 +9,7 @@ export class EnquiryEndpointController {
 
       const responseBody = {
         message: "success", 
-        customerEnquiry: customerEnquiry.toJsonLd()
+        customerEnquiry: JSON.parse(customerEnquiry.toJsonLd())
       }
 
       const responseHeader = {

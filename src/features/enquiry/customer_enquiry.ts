@@ -58,7 +58,7 @@ export class CustomerEnquiry {
       answerCount: 0,
       author: {
         "@type": "Person",
-        name: `${this.firstName}`,
+        name: `${this.firstName} ${this.familyName}`,
         givenName: this.firstName,
         familyName: this.familyName,
         email: this.email

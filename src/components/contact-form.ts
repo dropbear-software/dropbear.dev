@@ -15,9 +15,9 @@ export class ContactForm extends LitElement {
       method: "POST",
       body: formData,
     });
-    
+
     const responseData = await response.json();
-    console.log(`Api response = ${responseData.message}`);
+    console.log(responseData);
   }
 
   protected override render(): TemplateResult {
