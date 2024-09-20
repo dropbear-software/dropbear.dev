@@ -30,6 +30,13 @@ export class HomePage extends LitElement {
 
     .display-large {
       font-weight: 700;
+      /* margin-block-end: 0.2rem; */
+      display: block;
+    }
+
+    .display-small {
+      font-family: var(--md-ref-typeface-plain);
+      font-weight: 700;
     }
 
     .content {
