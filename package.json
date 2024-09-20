@@ -2,9 +2,10 @@
   "name": "@dropbear-dev/website",
   "type": "module",
   "version": "0.0.1",
+  "engines": {"node": "20"},
   "scripts": {
     "dev": "astro dev",
-    "start": "HOST=0.0.0.0 node ./dist/server/entry.mjs",
+    "start": "node ./dist/server/entry.mjs",
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"

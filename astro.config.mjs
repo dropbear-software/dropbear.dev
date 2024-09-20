@@ -11,7 +11,7 @@ export default defineConfig({
     checkOrigin: true
   },
   adapter: node({
-    mode: "standalone"
+    mode: "middleware"
   }),
   build: {
     assets: '_assets'

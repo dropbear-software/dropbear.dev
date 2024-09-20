@@ -1,0 +1,29 @@
+{
+  "hosting": {
+    "source": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "frameworksBackend": {
+      "region": "europe-west1"
+    },
+    "rewrites": [
+      {
+        "source": "/services/sstm/**",
+        "run": {
+          "serviceId": "server-side-tagging",
+          "region": "europe-west1"
+        }
+      },
+      {
+        "source": "/services/sstm-preview/**",
+        "run": {
+          "serviceId": "server-side-tagging-preview",
+          "region": "europe-west1"
+        }
+      }
+    ]
+  }
+}
