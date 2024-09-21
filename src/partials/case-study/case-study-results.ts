@@ -21,7 +21,6 @@ export class CaseStudyResult extends LitElement {
       }
 
       md-elevated-card {
-        min-width: 450px;
         --md-elevated-card-container-color: white;
       }
 
@@ -54,6 +53,12 @@ export class CaseStudyResult extends LitElement {
         & > span {
           border-radius: 15px;
           padding: 0.5rem 1rem;
+        }
+      }
+
+      @media (min-width: 961px) {
+        md-elevated-card {
+          min-width: max-content;
         }
       }
     `
