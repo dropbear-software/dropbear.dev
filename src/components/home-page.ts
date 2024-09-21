@@ -7,13 +7,15 @@ import '../partials/hero/hero-split.js';
 import { customElement } from "lit/decorators.js";
 import { globalStyles } from "../styles/js/global.css.js";
 import { servicesPartial, servicesStyle } from "../partials/services/services-partial.js";
+import { caseStudyPartial, caseStudyPartialStyles } from "../partials/case-study/partial.js";
 
 @customElement('home-page')
 export class HomePage extends LitElement {
 
   static override styles: CSSResultGroup = [
     globalStyles,
-    servicesStyle
+    servicesStyle,
+    caseStudyPartialStyles
   ];
 
   protected override render(): TemplateResult {
@@ -24,6 +26,7 @@ export class HomePage extends LitElement {
     return html`
     <hero-split></hero-split>
     ${servicesPartial}
+    ${caseStudyPartial}
     `;
   } 
 }

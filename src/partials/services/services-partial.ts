@@ -4,7 +4,7 @@ import "@material/web/button/outlined-button.js"
 
 export const servicesPartial = html`
 <section class="services">
-  <h2 class="headline-large">How I Can Help You?</h2>
+  <h2 class="headline-large">How I Can Help You</h2>
   <p class="title-medium">
     Struggling with digital marketing or website challenges? 
     Let's work together to find the right solutions for your business. 
@@ -105,7 +105,7 @@ export const servicesStyle = css`
 
   & .services-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 65ch));
+    grid-template-columns: repeat(auto-fit, minmax(80px, 59ch));
     gap: 1rem;
     margin-block-start: 2rem;
   }
@@ -127,7 +127,7 @@ export const servicesStyle = css`
   }
 
   & .title-medium {
-    max-width: 75ch;
+    max-width: 85ch;
     text-wrap: balance;
     margin-block-start: 1rem;
   }
