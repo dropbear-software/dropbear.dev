@@ -1,8 +1,9 @@
-import { CloudEvent, type CloudEventV1 } from 'cloudevents';
 import { CustomerEnquiry } from "./customer_enquiry.js";
 
 export class EnquiryEndpointController {
   async onRequest(req: Request): Promise<Response> {
+    const isProduction = process.env.NODE_ENV === 'production';
+
     try {
       const formData = await req.formData();
       const customerEnquiry = CustomerEnquiry.fromFormData(formData);
@@ -18,8 +19,12 @@ export class EnquiryEndpointController {
           "Content-Type": "application/json"
         }
       }
+      
+      if(isProduction){
+        await this.#webhook(customerEnquiry);
+      }
 
-      await this.#logEvent(customerEnquiry);
+      console.log('Customer enquiry received');
 
       return new Response(JSON.stringify(responseBody), responseHeader);
     } catch (error) {
@@ -32,25 +37,20 @@ export class EnquiryEndpointController {
     }
   }
 
-  async #logEvent(customerEnquiry: CustomerEnquiry): Promise<void> {
-    // const endpoint = new URL('https://www.something.com');
-
-    const ce: CloudEventV1<string> = {
-      specversion: "1.0",
-      source: "/some/source",
-      type: "dev.dropbear.customer_enquiry.create.v1",
-      id: this.#generateRandomId(),
-      data: customerEnquiry.toJsonLd(),
-      datacontenttype: "application/json",
-      time: new Date(Date.now()).toISOString(),
-    };
-
-    const cloudEvent = new CloudEvent(ce);
-
-    console.log(cloudEvent.toJSON());
-  }
-
-  #generateRandomId(): string {
-    return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+  // Send a base64 encoded copy of the JSON-LD object to Google Workspace Chat
+  async #webhook(customerEnquiry: CustomerEnquiry) {
+    const workspaceId = 'AAAAs194MP4';
+    const url = new URL(`https://chat.googleapis.com/v1/spaces/${workspaceId}/messages`);
+    url.searchParams.append('key', 'AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI');
+    url.searchParams.append('token', 'MNEtnlU_57yd2fozXTPVqMLQp0lFHD8gib3niVpNZhY');
+    
+    const base64EncodedMessage = btoa(customerEnquiry.toJsonLd());
+    
+    const res = await fetch(url, {
+      method: "POST",
+      headers: {"Content-Type": "application/json; charset=UTF-8"},
+      body: JSON.stringify({text: base64EncodedMessage})
+    });
+    return await res.json();
   }
 }

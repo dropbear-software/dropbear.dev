@@ -8,6 +8,7 @@ import { customElement } from "lit/decorators.js";
 import { globalStyles } from "../styles/js/global.css.js";
 import { servicesPartial, servicesStyle } from "../partials/services/services-partial.js";
 import { caseStudyPartial, caseStudyPartialStyles } from "../partials/case-study/partial.js";
+import { contactMe } from "../partials/contact-me/contact-me.js";
 
 @customElement('home-page')
 export class HomePage extends LitElement {
@@ -27,6 +28,7 @@ export class HomePage extends LitElement {
     <hero-split></hero-split>
     ${servicesPartial}
     ${caseStudyPartial}
+    ${contactMe}
     `;
   } 
 }
