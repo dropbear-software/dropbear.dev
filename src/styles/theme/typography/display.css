@@ -1,0 +1,24 @@
+@layer theme {
+  :root {
+    /* Display small */
+    --md-sys-typescale-display-small-font: var(--md-ref-typeface-brand);
+    --md-sys-typescale-display-small-size: calc(36/16 * 1rem);
+    --md-sys-typescale-display-small-weight: var(--md-ref-typeface-weight-regular);
+    --md-sys-typescale-display-small-line-height: calc(44/16 * 1rem);
+    --md-sys-typescale-display-small-tracking: 0px;
+
+    /* Display medium */
+    --md-sys-typescale-display-medium-font: var(--md-ref-typeface-brand);
+    --md-sys-typescale-display-medium-size: calc(45/16 * 1rem);
+    --md-sys-typescale-display-medium-weight: var(--md-ref-typeface-weight-regular);
+    --md-sys-typescale-display-medium-line-height: calc(52/16 * 1rem);
+    --md-sys-typescale-display-medium-tracking: 0px;
+
+    /* Display large */
+    --md-sys-typescale-display-large-font: var(--md-ref-typeface-brand);
+    --md-sys-typescale-display-large-size: calc(57/16 * 1rem);
+    --md-sys-typescale-display-large-weight: var(--md-ref-typeface-weight-regular);
+    --md-sys-typescale-display-large-line-height: calc(64/16 * 1rem);
+    --md-sys-typescale-display-large-tracking: -0.25px;
+  }
+}

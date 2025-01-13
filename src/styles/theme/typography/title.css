@@ -1,0 +1,24 @@
+@layer theme {
+  :root {
+    /* Title small */
+    --md-sys-typescale-title-small-font: var(--md-ref-typeface-plain);
+    --md-sys-typescale-title-small-size: calc(14/16 * 1rem);
+    --md-sys-typescale-title-small-weight: var(--md-ref-typeface-weight-medium);
+    --md-sys-typescale-title-small-line-height: calc(20/16 * 1rem);
+    --md-sys-typescale-title-small-tracking: 0.1px;
+
+    /* Title medium */
+    --md-sys-typescale-title-medium-font: var(--md-ref-typeface-plain);
+    --md-sys-typescale-title-medium-size: calc(16/16 * 1rem);
+    --md-sys-typescale-title-medium-weight: var(--md-ref-typeface-weight-medium);
+    --md-sys-typescale-title-medium-line-height: calc(24/16 * 1rem);
+    --md-sys-typescale-title-medium-tracking: 0.15px;
+
+    /* Title large */
+    --md-sys-typescale-title-large-font: var(--md-ref-typeface-brand);
+    --md-sys-typescale-title-large-size: calc(22/16 * 1rem);
+    --md-sys-typescale-title-large-weight: var(--md-ref-typeface-weight-regular);
+    --md-sys-typescale-title-large-line-height: calc(28/16 * 1rem);
+    --md-sys-typescale-title-large-tracking: 0px;
+  }
+}

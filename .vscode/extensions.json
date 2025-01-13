@@ -1,0 +1,7 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "runem.lit-plugin",
+    "astro-build.astro-vscode"
+  ]
+}

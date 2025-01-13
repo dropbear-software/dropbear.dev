@@ -1,0 +1,33 @@
+{
+  "name": "@dropbear-dev/website",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": "22"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "start": "node ./dist/server/entry.mjs",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/node": "^9.0.1",
+    "@lit-labs/motion": "^1.0.7",
+    "@material/web": "^2.2.0",
+    "astro": "^5.1.6",
+    "lit": "^3.2.0",
+    "typescript": "^5.7.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dropbear-software/dropbear.dev.git"
+  },
+  "author": "Mark Hoad",
+  "bugs": {
+    "url": "https://github.com/dropbear-software/dropbear.dev/issues"
+  },
+  "homepage": "https://github.com/dropbear-software/dropbear.dev#readme"
+}
