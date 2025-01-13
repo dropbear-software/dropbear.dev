@@ -19,7 +19,7 @@ export class HeroSplit extends LitElement {
           <h1 class="display-large">${heroContent.actual.headline}</h1> 
           <p class="headline-large">${heroContent.actual.subheading}</p>
           <div>
-            <md-filled-button>${heroContent.actual.cta}</md-filled-button>
+            
           </div>
         </div>
         <div class="hero-image">
