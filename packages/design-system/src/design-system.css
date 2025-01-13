@@ -1,5 +1,0 @@
-@layer normalize, design-system.reference, design-system.material, design-system.material.reference, design-system.material.system, design-system.material.modules;
-
-@import url(utils/normalize.css) layer(normalize);
-@import url(color/module.css);
-@import url(typography/module.css);
