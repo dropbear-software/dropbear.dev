@@ -47,7 +47,13 @@ export class ContactForm extends LitElement {
       }));
       this.form.reset();
     } else {
-
+      this.dispatchEvent(new CustomEvent('show-toast', {
+        detail: {
+          message: 'There was an error sending your message.',
+        },
+        bubbles: true,
+        composed: true,
+      }));
     }
     console.log(responseData);
   }
