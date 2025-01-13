@@ -2,7 +2,9 @@
   "name": "@dropbear-dev/website",
   "type": "module",
   "version": "0.0.1",
-  "engines": {"node": "20"},
+  "engines": {
+    "node": "20"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "node ./dist/server/entry.mjs",
@@ -14,6 +16,7 @@
     "@astrojs/check": "^0.9.3",
     "@astrojs/lit": "^4.3.0",
     "@astrojs/node": "^8.3.3",
+    "@lit-labs/motion": "^1.0.7",
     "@material/web": "^2.1.0",
     "@webcomponents/template-shadowroot": "^0.2.1",
     "astro": "^4.14.5",

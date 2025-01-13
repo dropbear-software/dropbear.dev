@@ -31,6 +31,24 @@ export class ContactForm extends LitElement {
     });
 
     const responseData = await response.json();
+    if(responseData.message === 'success'){
+      this.dispatchEvent(new CustomEvent('contact_form_success', {
+        detail: responseData.customerEnquiry,
+        bubbles: true,
+        composed: true,
+      }  
+    ));
+      this.dispatchEvent(new CustomEvent('show-toast', {
+        detail: {
+          message: 'Your message has been sent',
+        },
+        bubbles: true,
+        composed: true,
+      }));
+      this.form.reset();
+    } else {
+
+    }
     console.log(responseData);
   }
 
